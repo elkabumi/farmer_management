@@ -38,11 +38,11 @@
                             </a>
                             <ul class="treeview-menu">
           
-                                <li><a href="question.php?page=list"><i class="fa fa-chevron-circle-right"></i>Bibit</a></li>
-                                <li><a href="question_pma.php?page=list"><i class="fa fa-chevron-circle-right"></i>Varietas</a></li>
+                                <li><a href="seed.php?page=list"><i class="fa fa-chevron-circle-right"></i>Bibit</a></li>
+                                <li><a href="varieties.php?page=list"><i class="fa fa-chevron-circle-right"></i>Varietas</a></li>
                                 
-                                <li><a href="question_pma.php?page=list"><i class="fa fa-chevron-circle-right"></i>Model Jarak Tanam</a></li>
-                                <li><a href="question_pma.php?page=list"><i class="fa fa-chevron-circle-right"></i>Type Treatment</a></li>
+                                <li><a href="planting_distance_model.php?page=list"><i class="fa fa-chevron-circle-right"></i>Model Jarak Tanam</a></li>
+                                <li><a href="treatment_type.php?page=list"><i class="fa fa-chevron-circle-right"></i>Type Treatment</a></li>
                                 
                                
                              	
@@ -50,7 +50,7 @@
                   </li>
                   
                     <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 2){ echo "class='active'"; } ?>>
-                            <a href="participant.php">
+                            <a href="farmer.php">
                                 <i class="fa fa-briefcase"></i>
                                 <span>Petani</span>
                                
@@ -58,7 +58,7 @@
                             
                   </li>
                       <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 2){ echo "class='active'"; } ?>>
-                            <a href="participant_pma.php">
+                            <a href="land.php">
                                 <i class="fa fa-briefcase"></i>
                                 <span>Tanah</span>
 
@@ -68,7 +68,7 @@
                   </li>
                 
                         <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 2){ echo "class='active'"; } ?>>
-                            <a href="kuisioner.php">
+                            <a href="farmer_land.php">
                                 <i class="fa fa-briefcase"></i>
                                 <span>Hamparan Petani</span>
                                
@@ -78,7 +78,7 @@
                   
                   
                         <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 3){ echo "class='active'"; } ?>>
-                            <a href="kuisioner_pma.php">
+                            <a href="planting_process.php">
                                 <i class="fa fa-briefcase"></i>
                                 <span>Proses Tanam</span>
                                

@@ -1,14 +1,4 @@
-  <section class="content-header">
-                    <h1>
-                        Home
-                        <small></small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                      
-                        <li class="active">Data</li>
-                    </ol>
-                </section>
+
 
                 <?php
                 if(isset($_GET['did']) && $_GET['did'] == 1){
@@ -61,8 +51,9 @@
                             
                             <div class="box">
                              
-                                <div class="box-body2 table-responsive">
-                                   Selamat Datang
+                                <div class="box-body2 table-responsive" style="padding:20px; text-align:center;">
+                                   <h2>Selamat Datang</h2>
+                                  <h4> Di Sistem Management Petani</h4>
 
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->

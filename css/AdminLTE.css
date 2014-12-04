@@ -2831,6 +2831,7 @@ Component: timeline
 	font-weight:bold;
 	margin-bottom:10px;
 	text-shadow: 0 1px 1px #ffffff;
+	text-transform:uppercase;
 }
 .header_new{
 	color:#3d495d ; 
