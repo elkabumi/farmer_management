@@ -47,6 +47,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             
+                              <div class="title_page"> <?= $title ?></div>
                             
                             <div class="box">
                              
@@ -58,6 +59,7 @@
                                                 <th>code contract</th>
                                                 <th>Nama</th>
                                                 <th>Alamat</th>
+                                                <th>Config</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -76,7 +78,7 @@
                                                     <a href="farmer.php?page=form&id=<?= $row['farmer_id']?>" class="btn btn-danger" ><i class="fa fa-pencil"></i></a>
                                                     <a href="javascript:void(0)" onclick="confirm_delete(<?= $row['farmer_id']; ?>,'farmer.php?page=delete&id=')" class="btn btn-danger" ><i class="fa fa-trash-o"></i></a>
 
-                                                </td> -->
+                                                </td> 
                                             </tr>
                                             <?php
 											$no++;

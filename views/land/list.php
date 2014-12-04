@@ -46,7 +46,7 @@
                 <section class="content">
                     <div class="row">
                         <div class="col-xs-12">
-                            
+                             <div class="title_page"> <?= $title ?></div>
                             
                             <div class="box">
                              
@@ -57,6 +57,7 @@
                                             <th width="5%">No</th>
                                                 <th>Luas Tanah</th>
                                                 <th>Lokasi Tanah</th>
+                                                <th>Config</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -74,7 +75,7 @@
                                                     <a href="land.php?page=form&id=<?= $row['land_id']?>" class="btn btn-danger" ><i class="fa fa-pencil"></i></a>
                                                     <a href="javascript:void(0)" onclick="confirm_delete(<?= $row['land_id']; ?>,'land.php?page=delete&id=')" class="btn btn-danger" ><i class="fa fa-trash-o"></i></a>
 
-                                                </td> -->
+                                                </td>
                                             </tr>
                                             <?php
 											$no++;

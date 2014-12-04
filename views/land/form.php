@@ -25,7 +25,7 @@
                         <div class="col-md-12">
                             <!-- general form elements disabled -->
 
-                          
+                           <div class="title_page"> <?= $title ?></div>
                           
 
                              <form action="<?= $action?>" method="post" enctype="multipart/form-data" role="form">
@@ -82,12 +82,12 @@
 			  ?>
                     <div class="row">
                         <div class="col-xs-12">
-                            
+                             <div class="title_page">Data Petani</div>
                             
                             <div class="box">
                              
                                 <div class="box-body2 table-responsive">
-                                    <table id="" class="table table-bordered table-striped">
+                                    <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
                                             <th width="5%">No</th>
@@ -105,7 +105,7 @@
                                             <tr>
                                             	<td><?= $no_farmer_land?></td>
                                                 <td><?= $r_farmer_land['farmer_name']?></td>
-                                                <td><?= $r_farmer_land['land_area']?></td>
+                                                <td><?= $r_farmer_land['farmer_land_area']?></td>
                                               
                                                  <td style="text-align:center;">
 
@@ -115,7 +115,7 @@
                                                 </td> 
                                             </tr>
                                             <?php
-											$no_opsi++;
+											$no_farmer_land++;
                                             }
                                             ?>
 

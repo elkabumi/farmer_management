@@ -4,9 +4,9 @@ include '../lib/function.php';
 include '../models/land_model.php';
 $page = null;
 $page = (isset($_GET['page'])) ? $_GET['page'] : "list";
-$title = ucfirst("land");
+$title = ucfirst("Tanah");
 
-$_SESSION['menu_active'] = 6;
+$_SESSION['menu_active'] = 3;
 
 switch ($page) {
 	case 'list':
