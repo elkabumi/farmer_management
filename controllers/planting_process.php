@@ -6,7 +6,7 @@ $page = null;
 $page = (isset($_GET['page'])) ? $_GET['page'] : "list";
 $title = ucfirst("Proses Tanam");
 
-$_SESSION['menu_active'] = 1;
+$_SESSION['menu_active'] = 4;
 
 switch ($page) {
 	// Tampilan List awal
@@ -26,6 +26,10 @@ switch ($page) {
 		get_header();
 
 		$close_button = "planting_process.php?page=list";
+		$query_land = select_land();
+		$query_varieties = select_varieties();
+		$query_planting_distance_model = select_planting_distance_model();
+		$query_seed = select_seed();
 
 		$id = (isset($_GET['id'])) ? $_GET['id'] : null;
 		if($id){
@@ -38,8 +42,13 @@ switch ($page) {
 			//inisialisasi
 			$row = new stdClass();
 	
-			$row->planting_process_name = false;
-			$row->planting_process_description = false;
+			$row->land_id = false;
+			$row->varieties_id = false;
+			$row->planting_process_date = date("Y-m-d");
+			$row->planting_distance_model_id = false;
+			$row->planting_process_planting_distance = false;
+			$row->planting_process_seedling_stage = false;
+			$row->seed_id = false;
 
 			$action = "planting_process.php?page=save";
 		}
@@ -52,13 +61,28 @@ switch ($page) {
 	case 'save':
 		extract($_POST);
 
-		$i_name = get_isset($i_name);
-		$i_description = get_isset($i_description);
+		$i_land_id = get_isset($i_land_id);
+		$i_varieties_id = get_isset($i_varieties_id);
+		$i_date = format_back_date(get_isset($i_date));
+		$i_planting_distance_model_id = get_isset($i_planting_distance_model_id);
+		$i_planting_distance = get_isset($i_planting_distance);
+		$i_seedling_stage = get_isset($i_seedling_stage);
+		$i_seed_id = get_isset($i_seed_id);
 
 		$data = "'',
-				'$i_name', 
-				'$i_description'
+				'$i_land_id', 
+				'$i_varieties_id',
+				'$i_date',
+				'$i_planting_distance_model_id',
+				'$i_planting_distance',
+				'$i_seedling_stage',
+				'$i_seed_id',
+				'',
+				'',
+				'',
+				''
 				";
+		
 		create($data);
 
 		header('Location: planting_process.php?page=list&did=1');
@@ -72,13 +96,23 @@ switch ($page) {
 		
 		extract($_POST);
 
-		$i_name = get_isset($i_name);
-		$i_description = get_isset($i_description);
+		$i_land_id = get_isset($i_land_id);
+		$i_varieties_id = get_isset($i_varieties_id);
+		$i_date = format_back_date(get_isset($i_date));
+		$i_planting_distance_model_id = get_isset($i_planting_distance_model_id);
+		$i_planting_distance = get_isset($i_planting_distance);
+		$i_seedling_stage = get_isset($i_seedling_stage);
+		$i_seed_id = get_isset($i_seed_id);
 	
 
 		
-					$data = " planting_process_name = '$i_name', 
-					planting_process_description = '$i_description'
+					$data = " land_id = '$i_land_id', 
+					varieties_id = '$i_varieties_id',
+					planting_process_date = '$i_date',
+					planting_distance_model_id = '$i_planting_distance_model_id',
+					planting_process_planting_distance = '$i_planting_distance',
+					planting_process_seedling_stage = '$i_seedling_stage',
+					seed_id = '$i_seed_id'
 
 			";
 			

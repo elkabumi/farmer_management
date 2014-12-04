@@ -42,8 +42,7 @@
                 }
                 ?>
 
-                <!-- Main content -->
-                <section class="content">
+             
                     <div class="row">
                         <div class="col-xs-12">
                             
@@ -57,13 +56,9 @@
                                             <tr>
                                             <th width="5%">No</th>
                                             	<th>Tanggal</th>
-                                                <th>Tanah</th>
+                                                <th>Tipe Treatment</th>
+                                                <th>Keterangan</th>
                                                
-                                                <th>Varietas</th>
-                                                <th>Model Jarak Tanam</th>
-                                                <th>Jarak Tanam</th>
-                                                <th>Jenjang Bibit</th>
-                                                <th>Data Bibit</th>
                                                 <th>Config</th>
                                                   
                                             </tr>
@@ -75,17 +70,13 @@
                                             ?>
                                             <tr>
                                               <td><?= $no?></td>
-                                              <td><?= format_date($row['planting_process_date'])?></td>
-                                              <td><?= $row['location_name']." (".get_land_area($row['land_id']).")"; ?></td>
-                                              <td><?= $row['varieties_name']?></td>
-                                              <td><?= $row['planting_distance_model_name']?></td>
-                                              <td><?= $row['planting_process_planting_distance']." cm"?></td>
-                                              <td><?= $row['planting_process_seedling_stage']." cm"?></td>
-                                              <td><?= $row['seed_name']?></td>
+                                              <td><?= format_date($row['treatment_date'])?></td>
+                                              <td><?= $row['treatment_type_name']?></td>
+                                              <td><?= $row['treatment_description']?></td>
                                               <td style="text-align:center;">
 
-                                                    <a href="planting_process.php?page=form&id=<?= $row['planting_process_id']?>" class="btn btn-danger" ><i class="fa fa-pencil"></i></a>
-                                                    <a href="javascript:void(0)" onclick="confirm_delete(<?= $row['planting_process_id']; ?>,'planting_process.php?page=delete&id=')" class="btn btn-danger" ><i class="fa fa-trash-o"></i></a>
+                                                    <a href="treatment.php?page=form&planting_process_id=<?= $row['planting_process_id']?>&id=<?= $row['treatment_id']?>" class="btn btn-danger" ><i class="fa fa-pencil"></i></a>
+                                                    <a href="javascript:void(0)" onclick="confirm_delete(<?= $row['treatment_id']; ?>,'treatment.php?page=delete&planting_process_id=<?= $row['planting_process_id']?>&id=')" class="btn btn-danger" ><i class="fa fa-trash-o"></i></a>
 
                                                 </td>
                                             </tr>

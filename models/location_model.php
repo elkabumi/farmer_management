@@ -3,7 +3,7 @@
 function select(){
 	$query = mysql_query("select *
 		from locations a 
-			
+			order by location_id
 			");
 	return $query;
 }

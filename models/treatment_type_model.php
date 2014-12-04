@@ -3,7 +3,7 @@
 function select(){
 	$query = mysql_query("select *
 		from treatment_types a 
-			
+			order by treatment_type_id
 			");
 	return $query;
 }

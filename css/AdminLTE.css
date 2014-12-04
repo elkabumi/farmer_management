@@ -2860,3 +2860,9 @@ Component: timeline
 	font-style:italic;
 	font-size:11px;
 }
+.field_note{
+	
+	font-style:italic;
+	color:#999;
+	font-size:11px;
+}

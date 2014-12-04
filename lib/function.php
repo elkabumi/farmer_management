@@ -1,6 +1,11 @@
 <?php
 
-
+function get_land_area($land_id){
+	$query = mysql_query("select sum(farmer_land_area) as jumlah from farmer_lands where land_id = '$land_id'");
+	$row = mysql_fetch_object($query);
+	$result = ($row->jumlah) ? $row->jumlah : 0;
+	return $result." m3";
+}
 function format_rupiah($angka){
   $rupiah=number_format($angka,0,',','.');
   return $rupiah;
