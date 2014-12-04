@@ -22,7 +22,7 @@
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body style="background:#354052 !important">
+    <body >
 
         <div class="form-box" id="login-box">
             <div class="header"><div class="bg-logo"><span style="font-size: 1.3em !important;"><strong>Farmer Management</strong></span><br>Jawa Timur</div></div>

@@ -42,8 +42,8 @@
                                 <li><a href="varieties.php?page=list"><i class="fa fa-chevron-circle-right"></i>Varietas</a></li>
                                 
                                 <li><a href="planting_distance_model.php?page=list"><i class="fa fa-chevron-circle-right"></i>Model Jarak Tanam</a></li>
-                                <li><a href="treatment_type.php?page=list"><i class="fa fa-chevron-circle-right"></i>Type Treatment</a></li>
-                                
+                                <li><a href="treatment_type.php?page=list"><i class="fa fa-chevron-circle-right"></i>Tipe Treatment</a></li>
+                                <li><a href="location.php?page=list"><i class="fa fa-chevron-circle-right"></i>Lokasi</a></li>
                                
                              	
                             </ul>
@@ -57,7 +57,7 @@
                             </a>
                             
                   </li>
-                      <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 2){ echo "class='active'"; } ?>>
+                      <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 3){ echo "class='active'"; } ?>>
                             <a href="land.php">
                                 <i class="fa fa-briefcase"></i>
                                 <span>Tanah</span>
@@ -65,19 +65,9 @@
                                
                             </a>
                             
-                  </li>
-                
-                        <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 2){ echo "class='active'"; } ?>>
-                            <a href="farmer_land.php">
-                                <i class="fa fa-briefcase"></i>
-                                <span>Hamparan Petani</span>
-                               
-                            </a>
-                            
-                  </li>
+                 
                   
-                  
-                        <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 3){ echo "class='active'"; } ?>>
+                        <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 4){ echo "class='active'"; } ?>>
                             <a href="planting_process.php">
                                 <i class="fa fa-briefcase"></i>
                                 <span>Proses Tanam</span>
@@ -85,8 +75,18 @@
                             </a>
                             
                   </li>
+                  
+                  
+                   <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 5){ echo "class='active'"; } ?>>
+                            <a href="treatment.php">
+                                <i class="fa fa-briefcase"></i>
+                                <span>Treatment</span>
+                               
+                            </a>
+                            
+                  </li>
                  
-                     <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 3){ echo "class='active'"; } ?>>
+                     <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 6){ echo "class='active'"; } ?>>
                             <a href="kuisioner_pma.php">
                                 <i class="fa fa-briefcase"></i>
                                 <span>Pencarian</span>
@@ -99,7 +99,7 @@
                     
                  
                   
-                  <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 6){ echo "class='active'"; } ?>>
+                  <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 7){ echo "class='active'"; } ?>>
                             <a href="user.php">
                                 <i class="fa fa-user"></i>
                                 <span>User</span>
