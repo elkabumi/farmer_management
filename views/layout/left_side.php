@@ -51,7 +51,7 @@
                   
                     <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 2){ echo "class='active'"; } ?>>
                             <a href="farmer.php">
-                                <i class="fa fa-briefcase"></i>
+                                <i class="fa fa-user"></i>
                                 <span>Petani</span>
                                
                             </a>
@@ -59,7 +59,7 @@
                   </li>
                       <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 3){ echo "class='active'"; } ?>>
                             <a href="land.php">
-                                <i class="fa fa-briefcase"></i>
+                                <i class="fa fa-pagelines"></i>
                                 <span>Tanah</span>
 
                                
@@ -69,7 +69,7 @@
                   
                         <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 4){ echo "class='active'"; } ?>>
                             <a href="planting_process.php">
-                                <i class="fa fa-briefcase"></i>
+                                <i class="fa  fa-calendar"></i>
                                 <span>Proses Tanam</span>
                                
                             </a>
@@ -79,7 +79,7 @@
                   
                    <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 5){ echo "class='active'"; } ?>>
                             <a href="treatment.php">
-                                <i class="fa fa-briefcase"></i>
+                                <i class="fa fa-leaf"></i>
                                 <span>Treatment</span>
                                
                             </a>
@@ -88,7 +88,7 @@
                  
                      <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 6){ echo "class='active'"; } ?>>
                             <a href="kuisioner_pma.php">
-                                <i class="fa fa-briefcase"></i>
+                                <i class="fa fa-search"></i>
                                 <span>Pencarian</span>
                                
                             </a>
@@ -101,7 +101,7 @@
                   
                   <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 7){ echo "class='active'"; } ?>>
                             <a href="user.php">
-                                <i class="fa fa-user"></i>
+                                <i class="fa fa-users"></i>
                                 <span>User</span>
                                
                             </a>

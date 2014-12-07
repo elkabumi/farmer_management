@@ -26,7 +26,7 @@
                             <!-- general form elements disabled -->
 
                           
-                          <div class="title_page">Data Tanam</div>
+                          <div class="title_page">Data Proses Tanam</div>
 
                              <form action="<?= $action?>" method="post" enctype="multipart/form-data" role="form">
 

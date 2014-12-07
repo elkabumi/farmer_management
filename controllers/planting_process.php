@@ -4,7 +4,7 @@ include '../lib/function.php';
 include '../models/planting_process_model.php';
 $page = null;
 $page = (isset($_GET['page'])) ? $_GET['page'] : "list";
-$title = ucfirst("Proses Tanam");
+$title = ucfirst("Data Proses Tanam");
 
 $_SESSION['menu_active'] = 4;
 
@@ -33,11 +33,16 @@ switch ($page) {
 
 		$id = (isset($_GET['id'])) ? $_GET['id'] : null;
 		if($id){
+			
+			$title = ucfirst("Form Edit Proses Tanam");
+
 
 			$row = read_id($id);
 		
 			$action = "planting_process.php?page=edit&id=$id";
 		} else{
+			$title = ucfirst("Form Input Proses Tanam");
+
 			
 			//inisialisasi
 			$row = new stdClass();

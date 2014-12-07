@@ -64,7 +64,7 @@
                                                 <th>Jarak Tanam</th>
                                                 <th>Jenjang Bibit</th>
                                                 <th>Data Bibit</th>
-                                                <th>Config</th>
+                                                <th width="10%">Config</th>
                                                   
                                             </tr>
                                         </thead>

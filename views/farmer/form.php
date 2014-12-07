@@ -40,8 +40,8 @@
                                         <div class="col-md-12">
                                         <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Code Contract</label>
-                                            <input required type="text" name="i_code" class="form-control" placeholder="Masukan code Contract ..." value="<?= $row->farmer_contract_code ?>"/>
+                                            <label>Kode Kontrak</label>
+                                            <input required type="text" name="i_code" class="form-control" placeholder="Masukan Kode Kontrak..." value="<?= $row->farmer_contract_code ?>"/>
                                         </div>
                                         
                                       <div class="form-group">
@@ -66,8 +66,8 @@
                                                   <input required type="text" name="i_name" class="form-control" placeholder="Masukan Nama ..."  value="<?= $row->farmer_name ?>"/>                                   
                                   		</div>
                                         <div class="form-group">
-                                            <label>Nomer Ktp</label>
-                                            <input required type="text" name="i_no_ktp" class="form-control" placeholder="Masukan NO Ktp ..." value="<?= $row->farmer_identity_number ?>"/>
+                                            <label>Nomor KTP</label>
+                                            <input required type="text" name="i_no_ktp" class="form-control" placeholder="Masukan Nomor KTP ..." value="<?= $row->farmer_identity_number ?>"/>
                                         </div>
                                         </div>
                                         

@@ -4,7 +4,7 @@ include '../lib/function.php';
 include '../models/planting_distance_model_model.php';
 $page = null;
 $page = (isset($_GET['page'])) ? $_GET['page'] : "list";
-$title = ucfirst("Model Jarak Tanam");
+$title = ucfirst("Data Model Jarak Tanam");
 
 $_SESSION['menu_active'] = 1;
 
@@ -29,12 +29,16 @@ switch ($page) {
 
 		$id = (isset($_GET['id'])) ? $_GET['id'] : null;
 		if($id){
+			
+			$title = ucfirst("Form Edit Model Jarak Tanam");
 
 			$row = read_id($id);
 		
 			$action = "planting_distance_model.php?page=edit&id=$id";
 		} else{
 			
+			$title = ucfirst("Form Input Model Jarak Tanam");
+
 			//inisialisasi
 			$row = new stdClass();
 	

@@ -4,7 +4,7 @@ include '../lib/function.php';
 include '../models/seed_model.php';
 $page = null;
 $page = (isset($_GET['page'])) ? $_GET['page'] : "list";
-$title = ucfirst("Bibit");
+$title = ucfirst("Data Bibit");
 
 $_SESSION['menu_active'] = 1;
 
@@ -29,18 +29,22 @@ switch ($page) {
 
 		$id = (isset($_GET['id'])) ? $_GET['id'] : null;
 		if($id){
+			
+			$title = ucfirst("Form Edit Bibit");
 
 			$row = read_id($id);
 		
 			$action = "seed.php?page=edit&id=$id";
 		} else{
 			
+			$title = ucfirst("Form Input Bibit");
+
 			//inisialisasi
 			$row = new stdClass();
 	
 			$row->seed_name = false;
 			$row->seed_description = false;
-
+	
 			$action = "seed.php?page=save";
 		}
 

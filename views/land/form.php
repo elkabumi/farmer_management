@@ -56,7 +56,7 @@
                                   	  </div>
                                       <div class="col-md-6">
                                       		<div class="form-group">
-                                            <label>Luas Lahan</label>
+                                            <label>Luas Lahan (m3)</label>
                                             <input readonly="readonly" required type="text" name="i_area" class="form-control" value="<?= $row->land_area ?>"/>     
                                        		</div>
                                        </div>
@@ -82,7 +82,7 @@
 			  ?>
                     <div class="row">
                         <div class="col-xs-12">
-                             <div class="title_page">Data Petani</div>
+                             <div class="title_page">Data Tanah Petani</div>
                             
                             <div class="box">
                              
@@ -92,7 +92,7 @@
                                             <tr>
                                             <th width="5%">No</th>
                                                 <th>Nama Petani</th>
-                                                <th>Luas Lahan</th>
+                                                <th>Luas Lahan (m3)</th>
                                               	<th>Config</th> 
                                             </tr>
                                         </thead>

@@ -9290,7 +9290,7 @@
 			 *    } );
 			 */
 			//"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
-			"sInfo": " _START_ to _END_ of _TOTAL_",
+			"sInfo": "Data yang ditampilkan : _START_ sampai _END_ dari _TOTAL_ total data",
 		
 			/**
 			 * Display information string for when the table is empty. Typically the 
@@ -9308,7 +9308,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "Data yang ditampilkan 0 sampai 0 dari 0 data",
 		
 		
 			/**
@@ -9328,7 +9328,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(Hasil filter dari _MAX_ total data)",
 		
 		
 			/**

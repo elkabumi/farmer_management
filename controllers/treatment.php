@@ -4,7 +4,7 @@ include '../lib/function.php';
 include '../models/treatment_model.php';
 $page = null;
 $page = (isset($_GET['page'])) ? $_GET['page'] : "list";
-$title = ucfirst("Data Tanam");
+$title = ucfirst("Data Proses Tanam");
 
 $_SESSION['menu_active'] = 5;
 
@@ -43,7 +43,7 @@ switch ($page) {
 	
 		get_header();
 		
-		$title = ucfirst("Data Treatment");
+		
 		
 		$planting_process_id = (isset($_GET['planting_process_id'])) ? $_GET['planting_process_id'] : null;
 		
@@ -52,12 +52,12 @@ switch ($page) {
 
 		$id = (isset($_GET['id'])) ? $_GET['id'] : null;
 		if($id){
-
+			$title = ucfirst("Form Edit Treatment");
 			$row = read_id($id);
 		
 			$action = "treatment.php?page=edit&id=$id&planting_process_id=$planting_process_id";
 		} else{
-			
+			$title = ucfirst("Form Input Treatment");
 			//inisialisasi
 			$row = new stdClass();
 	

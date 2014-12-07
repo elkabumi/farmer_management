@@ -4,7 +4,7 @@ include '../lib/function.php';
 include '../models/location_model.php';
 $page = null;
 $page = (isset($_GET['page'])) ? $_GET['page'] : "list";
-$title = ucfirst("Lokasi");
+$title = ucfirst("Data Lokasi");
 
 $_SESSION['menu_active'] = 1;
 
@@ -29,11 +29,15 @@ switch ($page) {
 
 		$id = (isset($_GET['id'])) ? $_GET['id'] : null;
 		if($id){
+			
+			$title = ucfirst("Form Edit Lokasi");
+
 
 			$row = read_id($id);
 		
 			$action = "location.php?page=edit&id=$id";
 		} else{
+			$title = ucfirst("Form Input Lokasi");
 			
 			//inisialisasi
 			$row = new stdClass();

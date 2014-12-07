@@ -4,7 +4,7 @@ include '../lib/function.php';
 include '../models/land_model.php';
 $page = null;
 $page = (isset($_GET['page'])) ? $_GET['page'] : "list";
-$title = ucfirst("Tanah");
+$title = ucfirst("Data Tanah");
 
 $_SESSION['menu_active'] = 3;
 
@@ -27,11 +27,16 @@ switch ($page) {
 
 		$id = (isset($_GET['id'])) ? $_GET['id'] : null;
 		if($id){
+			
+			$title = ucfirst("Form Edit Tanah");
+
 
 			$row = read_id($id);
 			$action = "land.php?page=edit&id=$id";
 			
 		} else{
+
+			$title = ucfirst("Form Input Tanah");
 			
 			//inisialisasi
 			$row = new stdClass();
@@ -57,12 +62,14 @@ switch ($page) {
 
 		
 		if($f_id){
+			$title = ucfirst("Form Edit Tanah Petani");
 
 			$row = read_farmer_land_id($f_id);
 		
 			$action = "land.php?page=edit_farmer_land&id=$id&f_id=$f_id";
 		} else{
-			
+			$title = ucfirst("Form Input Tanah Petani");
+
 			//inisialisasi
 			$row = new stdClass();
 			

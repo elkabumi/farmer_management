@@ -4,7 +4,7 @@ include '../lib/function.php';
 include '../models/varieties_model.php';
 $page = null;
 $page = (isset($_GET['page'])) ? $_GET['page'] : "list";
-$title = ucfirst("Varietas");
+$title = ucfirst("Data Varietas");
 
 $_SESSION['menu_active'] = 1;
 
@@ -29,12 +29,17 @@ switch ($page) {
 
 		$id = (isset($_GET['id'])) ? $_GET['id'] : null;
 		if($id){
+			
+			$title = ucfirst("Form Edit Varietas");
+
 
 			$row = read_id($id);
 		
 			$action = "varieties.php?page=edit&id=$id";
 		} else{
 			
+			$title = ucfirst("Form Input Varietas");
+
 			//inisialisasi
 			$row = new stdClass();
 	

@@ -4,7 +4,7 @@ include '../lib/function.php';
 include '../models/farmer_model.php';
 $page = null;
 $page = (isset($_GET['page'])) ? $_GET['page'] : "list";
-$title = ucfirst("Petani ");
+$title = ucfirst("Data Petani");
 
 $_SESSION['menu_active'] = 2;
 
@@ -27,12 +27,12 @@ switch ($page) {
 
 		$id = (isset($_GET['id'])) ? $_GET['id'] : null;
 		if($id){
-
+			$title = ucfirst("Form Edit Petani");
 			$row = read_id($id);
 			$action = "farmer.php?page=edit&id=$id";
 			
 		} else{
-			
+			$title = ucfirst("Form Input Petani");
 			//inisialisasi
 			$row = new stdClass();
 

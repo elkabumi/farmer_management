@@ -25,6 +25,7 @@
                         <div class="col-md-12">
                             <!-- general form elements disabled -->
 
+                           <div class="title_page"> <?= $title ?></div>
                           
                           
 
@@ -59,7 +60,7 @@
                                         </div>
                                        
                                        	<div class="form-group"> 
-                                                <label>Luas Tanah</label>
+                                                <label>Luas Tanah (m3)</label>
                                             <input required type="text" name="i_luas" class="form-control" placeholder="Masukkan poin ..." value="<?= $row->farmer_land_area ?>"/>             
                                        
                                        
