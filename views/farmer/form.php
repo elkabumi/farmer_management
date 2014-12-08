@@ -85,8 +85,8 @@
                                 </div><!-- /.box-body -->
                                 
                                   <div class="box-footer">
-                                <input class="btn btn-info" type="submit" value="Save"/>
-                                <a href="<?= $close_button?>" class="btn btn-info" >Close</a>
+                                <input class="btn btn-success" type="submit" value="Save"/>
+                                <a href="<?= $close_button?>" class="btn btn-success" >Close</a>
                              
                              </div>
                             

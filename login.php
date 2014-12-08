@@ -21,6 +21,11 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+        <style>
+		html, body{
+			background-color:#354052 !important;
+		}
+		</style>
     </head>
     <body >
 
@@ -54,7 +59,7 @@
                   
                 </div>
                 <div class="footer" >                                                               
-                    <button type="submit" class="btn btn-info btn-block" style="margin-top:10px;">LOGIN</button>  
+                    <button type="submit" class="btn btn-success btn-block" style="margin-top:10px;">LOGIN</button>  
                     
                  
                 </div>

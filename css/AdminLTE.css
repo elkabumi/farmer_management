@@ -448,7 +448,7 @@ body > .header .logo .icon {
 .right-side > .content-header {
   position: relative;
   padding: 15px 15px 10px 20px;
- background:url(../img/bg-noise.png) repeat #FCF9B6;
+ background:#F9FAFC;
   /* background:#fff;*/
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -2380,7 +2380,7 @@ Component: timeline
   
   font-weight: 300;
   color: #fff;
-  background:#15A4FA;
+  background:#00A65A;
   
 }
 .form-box .body{
@@ -2549,7 +2549,7 @@ Component: timeline
 .skin-blue .navbar .nav .open > a,
 .skin-blue .navbar .nav .open > a:hover,
 .skin-blue .navbar .nav .open > a:focus {
-  background: #15a4fa ;
+  background: #00A65A;
   color: #f6f6f6;
 }
 .skin-blue .navbar .navbar-right > .nav a {
@@ -2561,7 +2561,7 @@ Component: timeline
 }
 /* skin-blue logo */
 .skin-blue .logo {
-  background-color: #15a4fa;
+  background-color: #00a65a;
   color: #f9f9f9;
   font-family: arial;
 }
@@ -2570,7 +2570,7 @@ Component: timeline
   
 }
 .skin-blue .logo:hover {
-  background: #15a4fa ;
+  background: #00a65a;
   text-decoration: none;
 }
 /* Skin-blue user panel */
@@ -2606,7 +2606,7 @@ Component: timeline
 .skin-blue .sidebar > .sidebar-menu > li.active > a {
   color: #fff;
   background:#303949;
-  border-left:5px solid #15a4fa;
+  border-left:5px solid #00a65a;
 }
 .skin-blue .sidebar > .sidebar-menu > li > .treeview-menu {
   margin: 0 1px;

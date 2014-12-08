@@ -90,8 +90,8 @@ if(!$_SESSION['login']){
             <a href="../index.php" class="logo" >
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="14%"><img src="../img/logo.png" width="30" style="margin-right:10px;"></td>
-                  <td width="86%"><span style="font-size:11px; font-weight:bold; color:#0FF">FARMER MANAGEMENT</span><br><span style="font-weight:bold;">JAWA TIMUR</span></td>
+                <td width="14%"><i class="fa fa-leaf" style=" font-size:26px; margin-right:20px;"></i></td>
+                  <td width="86%"><span style="font-size:11px; font-weight:bold; color:#0F9">FARMER MANAGEMENT</span><br><span style="font-weight:bold;">JAWA TIMUR</span></td>
               </tr>
               </tr>
             </table>

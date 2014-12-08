@@ -75,8 +75,8 @@
                                               <td><?= $row['treatment_description']?></td>
                                               <td style="text-align:center;">
 
-                                                    <a href="treatment.php?page=form&planting_process_id=<?= $row['planting_process_id']?>&id=<?= $row['treatment_id']?>" class="btn btn-danger" ><i class="fa fa-pencil"></i></a>
-                                                    <a href="javascript:void(0)" onclick="confirm_delete(<?= $row['treatment_id']; ?>,'treatment.php?page=delete&planting_process_id=<?= $row['planting_process_id']?>&id=')" class="btn btn-danger" ><i class="fa fa-trash-o"></i></a>
+                                                    <a href="treatment.php?page=form&planting_process_id=<?= $row['planting_process_id']?>&id=<?= $row['treatment_id']?>" class="btn btn-default" ><i class="fa fa-pencil"></i></a>
+                                                    <a href="javascript:void(0)" onclick="confirm_delete(<?= $row['treatment_id']; ?>,'treatment.php?page=delete&planting_process_id=<?= $row['planting_process_id']?>&id=')" class="btn btn-default" ><i class="fa fa-trash-o"></i></a>
 
                                                 </td>
                                             </tr>
@@ -90,7 +90,7 @@
                                         </tbody>
                                           <tfoot>
                                             <tr>
-                                                <td colspan="10"><a href="<?= $add_button ?>" class="btn btn-info " >Add</a></td>
+                                                <td colspan="10"><a href="<?= $add_button ?>" class="btn btn-success " >Add</a></td>
                                                
                                             </tr>
                                         </tfoot>

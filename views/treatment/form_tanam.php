@@ -87,7 +87,7 @@
                                 </div><!-- /.box-body -->
                                 
                                   <div class="box-footer">
-                                <a href="<?= $close_button?>" class="btn btn-info" >Close</a>
+                                <a href="<?= $close_button?>" class="btn btn-success" >Close</a>
                              
                              </div>
                             

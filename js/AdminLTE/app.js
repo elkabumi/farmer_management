@@ -136,7 +136,7 @@ $(function() {
         "z-index": "999999",
         cursor: "pointer",
         color: "#ddd"
-    }).html("<i class='fa fa-gear'></i>").addClass("no-print");
+    });
 
     var demo_settings = $("<div />").css({
         "padding": "10px",
@@ -147,19 +147,8 @@ $(function() {
         border: "3px solid rgba(0, 0, 0, 0.7)",
         "width": "200px",
         "z-index": "999999"
-    }).addClass("no-print");
-    demo_settings.append(
-            "<h4 style='margin: 0 0 5px 0; border-bottom: 1px dashed #ddd; padding-bottom: 3px;'>Layout Options</h4>"
-            + "<div class='form-group no-margin'>"
-            + "<div class='.checkbox'>"
-            + "<label>"
-            + "<input type='checkbox' onchange='change_layout();'/> "
-            + "Fixed layout"
-            + "</label>"
-            + "</div>"
-            + "</div>"
-            );
-
+    });
+   /*
     demo.click(function() {
         if (!$(this).hasClass("open")) {
             $(this).css("right", "200px");
@@ -174,10 +163,12 @@ $(function() {
 
     $("body").append(demo);
     $("body").append(demo_settings);
+	*/
 });
 function change_layout() {
     $("body").toggleClass("fixed");
 }
+
 /*END DEMO*/
 
 /* 

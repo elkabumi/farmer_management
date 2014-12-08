@@ -23,7 +23,7 @@ switch ($page) {
 
 			$row = read_id($id);
 			
-			log_data(1, 0, $_SESSION['user_id'],  "edit admin");
+			//log_data(1, 0, $_SESSION['user_id'],  "edit admin");
 			//$row->user_birth_date = format_date($row->user_birth_date);
 			$row->user_confirm_password = $row->user_password;
 
@@ -83,7 +83,7 @@ switch ($page) {
 
 			//echo $data;
 			update($data, $id);
-			log_data(3, $id, $_SESSION['user_id'],  "edit admin");
+			//log_data(3, $id, $_SESSION['user_id'],  "edit admin");
 			if($i_img){
 				move_uploaded_file($i_img_tmp, $path.$i_img);
 			}

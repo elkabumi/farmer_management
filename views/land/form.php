@@ -66,8 +66,8 @@
                                 </div><!-- /.box-body -->
                                 
                                 <div class="box-footer">
-                                <input class="btn btn-info" type="submit" value="Save"/>
-                                <a href="<?= $close_button?>" class="btn btn-info" >Close</a>
+                                <input class="btn btn-success" type="submit" value="Save"/>
+                                <a href="<?= $close_button?>" class="btn btn-success" >Close</a>
 </div>
                                 
                           
@@ -109,8 +109,8 @@
                                               
                                                  <td style="text-align:center;">
 
-                                                    <a href="land.php?page=form_farmer_land&f_id=<?= $r_farmer_land['farmer_land_id']?>&id=<?= $_GET['id']?>" class="btn btn-danger" ><i class="fa fa-pencil"></i></a>
-                                                    <a href="javascript:void(0)" onclick="confirm_delete(<?= $r_farmer_land['farmer_land_id']; ?>,'land.php?page=delete_farm_land&id=<?= $_GET['id'] ?>&f_id=')" class="btn btn-danger" ><i class="fa fa-trash-o"></i></a>
+                                                    <a href="land.php?page=form_farmer_land&f_id=<?= $r_farmer_land['farmer_land_id']?>&id=<?= $_GET['id']?>" class="btn btn-default" ><i class="fa fa-pencil"></i></a>
+                                                    <a href="javascript:void(0)" onclick="confirm_delete(<?= $r_farmer_land['farmer_land_id']; ?>,'land.php?page=delete_farm_land&id=<?= $_GET['id'] ?>&f_id=')" class="btn btn-default" ><i class="fa fa-trash-o"></i></a>
 
                                                 </td> 
                                             </tr>
@@ -124,7 +124,7 @@
                                         </tbody>
                                           <tfoot>
                                             <tr>
-                                                <td colspan="10"><a href="land.php?page=form_farmer_land&id=<?= $_GET['id']?>" class="btn btn-info " >Add</a></td>
+                                                <td colspan="10"><a href="land.php?page=form_farmer_land&id=<?= $_GET['id']?>" class="btn btn-success " >Add</a></td>
                                                
                                             </tr>
                                         </tfoot>

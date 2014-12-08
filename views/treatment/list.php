@@ -84,7 +84,7 @@
                                               <td><?= $row['seed_name']?></td>
                                               <td style="text-align:center;">
 
-                                                    <a href="treatment.php?page=list_treatment&planting_process_id=<?= $row['planting_process_id']?>" class="btn btn-danger" >Treatment</a>
+                                                    <a href="treatment.php?page=list_treatment&planting_process_id=<?= $row['planting_process_id']?>" class="btn btn-default" >Treatment</a>
                                                 
 
                                                 </td>
