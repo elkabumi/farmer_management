@@ -13,30 +13,12 @@ switch ($page) {
 	case 'list':
 		get_header();
 
-		$id = (isset($_GET['id'])) ? $_GET['id'] : null;
-		
-		$date_default = "";
-		$date_url = "";
-		
-		if(isset($_GET['preview'])){
-	
-			$i_farmer_id = get_isset($_GET['farmer']);
-		}
-		
-		$action = "search_farmer.php?page=form_result&preview=1";
-		
-		include '../views/search_farmer/form.php';
-		
-		if(isset($_GET['preview'])){
-			
-			$i_farmer_id = get_isset($_GET['farmer']);
-			
-			$query_item = select_summary($i_farmer_id);
-			
-			include '../views/search_farmer/list_item.php';
-		}
-		
-		
+		$query = select();
+		$add_button = "farmer.php?page=form";
+
+
+		include '../views/search_farmer/list.php';
+
 		get_footer();
 	break;
 	//Mengambil parameter
@@ -52,6 +34,21 @@ switch ($page) {
 		
 		header("Location: search_harves.php?page=list&preview=1&farmer=$i_farmer_id");
 	break;
-}
+	
+case 'form':
+	get_header();
+	
+	$title = ucfirst("Detail Data Petani");
+
+	$id = (isset($_GET['id'])) ? $_GET['id'] : null;
+		$row = read_id($id);
+		$query_item = select_summary($id);
+			
+			$close_button = "search_farmer.php?page=list";
+			
+			include '../views/search_farmer/form.php';
+			include '../views/search_farmer/list_item.php';
+	get_footer();
+	break;}
 
 ?>

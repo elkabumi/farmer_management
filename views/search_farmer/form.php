@@ -1,8 +1,3 @@
-<script type="text/javascript">
-    function getval(id) {
-       alert(id.value);
-    }
-</script>
 <!-- Content Header (Page header) -->      
                  <?php
                 if(isset($_GET['did']) && $_GET['did'] == 1){
@@ -37,45 +32,26 @@
 
                             <div class="box box-cokelat">                               
                                 <div class="box-body">                      
-                                    <div class="col-md-12">
+                                    	<div class="col-md-6">
                                         <div class="form-group">
-                                         <label>Nama Petani</label>
-                                        <select onchange="getval(this);" name="i_farmer_id"  class="selectpicker show-tick form-control" data-live-search="true"><option value="0">-</option>
-                                        <?php
-                                        $query_farmer = mysql_query("select * from farmers");
-                                        while($row_farmer = mysql_fetch_array($query_farmer)){
-                                        ?>
-                                        <option value="<?= $row_farmer['farmer_id']?>" <?php if($row_farmer['fermer_id'] == $i_farmer_id){ ?> selected="selected"<?php }?>><?= $row_farmer['farmer_name'] ?></option>
-                                        <?php
-                                        }
-                                        ?>
-                                        </select>
+                                           <label>Code</label>
+                                           <input required type="text" name="i_land_name" class="form-control" placeholder="Masukkan jarak tanam ..." value="<?= $row['farmer_contract_code'] ?>" readonly="readonly"/>
                                         </div>
-                                        <div class="form-group">
-                                         <label>Kode Petani</label>
-                                        <select name="i_farmer_id"  class="selectpicker show-tick form-control" data-live-search="true"><option value="0">-</option>
-                                        <?php
-                                        $query_farmer = mysql_query("select * from farmers");
-                                        while($row_farmer = mysql_fetch_array($query_farmer)){
-                                        ?>
-                                        <option value="<?= $row_farmer['farmer_id']?>" <?php if($row_farmer['fermer_id'] == $i_farmer_id){ ?> selected="selected"<?php }?>><?= $row_farmer['farmer_contract_code'] ?></option>
-                                        <?php
-                                        }
-                                        ?>
-                                        </select>
+                                        
+                                           <div class="form-group">
+                                           <label>Nama</label>
+                                           <input required type="text" name="i_land_name" class="form-control" placeholder="Masukkan jarak tanam ..." value="<?= $row['farmer_name'] ?>" readonly="readonly"/>
                                         </div>
+                                        </div>
+                                        <div class="col-md-6">
                                         <div class="form-group">
-                                         <label>Alamat Petani</label>
-                                        <select name="i_farmer_id"  class="selectpicker show-tick form-control" data-live-search="true"><option value="0">-</option>
-                                        <?php
-                                        $query_farmer = mysql_query("select * from farmers");
-                                        while($row_farmer = mysql_fetch_array($query_farmer)){
-                                        ?>
-                                        <option value="<?= $row_farmer['farmer_id']?>" <?php if($row_farmer['fermer_id'] == $i_farmer_id){ ?> selected="selected"<?php }?>><?= $row_farmer['farmer_address'] ?></option>
-                                        <?php
-                                        }
-                                        ?>
-                                        </select>
+                                           <label>Alamat</label>
+                                           <input required type="text" name="i_land_name" class="form-control" placeholder="Masukkan jarak tanam ..." value="<?= $row['farmer_address'] ?>" readonly="readonly"/>
+                                        </div>
+                                        
+                                           <div class="form-group">
+                                           <label>No KTP</label>
+                                           <input required type="text" name="i_land_name" class="form-control" placeholder="Masukkan jarak tanam ..." value="<?= $row['farmer_identity_number'] ?>" readonly="readonly"/>
                                         </div>
                                   	 </div>
                                         <div style="clear:both;"></div>
@@ -83,7 +59,7 @@
                                 </div><!-- /.box-body -->
                                 
                                 <div class="box-footer">
-                                <input class="btn btn-success" type="submit" value="Preview"/>
+                               <a href="<?= $close_button?>" class="btn btn-success" >Close</a>
                              
                              </div>
                             
