@@ -67,7 +67,7 @@
                                             ?>
                                             <tr>
                                             <td><?= $no?></td>
-                                                <td><?= $row['land_area']?></td>
+                                                <td><?= get_land_area($row['land_id'])?></td>
                                                 <td><?= $row['location_name']?></td>
                                                
                                              <td style="text-align:center;">

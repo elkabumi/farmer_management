@@ -57,7 +57,7 @@
                                       <div class="col-md-6">
                                       		<div class="form-group">
                                             <label>Luas Lahan (m3)</label>
-                                            <input readonly="readonly" required type="text" name="i_area" class="form-control" value="<?= $row->land_area ?>"/>     
+                                            <input readonly="readonly" required type="text" name="i_area" class="form-control" value="<?= get_land_area($row->land_id) ?>"/>     
                                        		</div>
                                        </div>
                                        </div>

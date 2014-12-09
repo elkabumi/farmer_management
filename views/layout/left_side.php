@@ -86,15 +86,20 @@
                             
                   </li>
                  
-                     <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 6){ echo "class='active'"; } ?>>
-                            <a href="kuisioner_pma.php">
+                   <li class="treeview <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 6){ echo "active"; }?>">
+                            <a href="#">
                                 <i class="fa fa-search"></i>
                                 <span>Pencarian</span>
-                               
+                                <i class="fa fa-angle-left pull-right"></i>
                             </a>
-                            
+                            <ul class="treeview-menu">
+                                
+                                <li><a href="search_harvest.php?page=list"><i class="fa fa-chevron-circle-right"></i>Panen</a></li>
+                                <li><a href="search_farmer.php?page=list"><i class="fa fa-chevron-circle-right"></i>Petani</a></li>
+                               
+                             
+                            </ul>
                   </li>
-                  
                         
                     
                  
