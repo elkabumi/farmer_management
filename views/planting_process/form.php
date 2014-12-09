@@ -36,7 +36,7 @@
                                 <div class="box-body">
                                     
                                      
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                         
                                             <div class="form-group">
                                            <label>Hamparan Tanah</label>
@@ -70,6 +70,7 @@
                                         </select>
                                         </div>
                                         
+                                        
                                            <div class="form-group">
                                         <label>Tanggal Tanam</label>
                                         <div class="input-group">
@@ -97,14 +98,16 @@
                                         </select>
                                         </div>
                                         
+                                        </div>
+                                        <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Jarak Tanam</label>
-                                            <input required type="text" name="i_planting_distance" class="form-control" placeholder="Masukkan jarak tanam ..." value="<?= $row->planting_process_planting_distance ?>"/> <span class="field_note">* Dalam satuan cm</span>
+                                            <label>Jarak Tanam (cm)</label>
+                                            <input required type="text" name="i_planting_distance" class="form-control" placeholder="Masukkan jarak tanam ..." value="<?= $row->planting_process_planting_distance ?>"/>
                                         </div>
                                         
                                          <div class="form-group">
-                                            <label>Jenjang Bibit</label>
-                                            <input required type="text" name="i_seedling_stage" class="form-control" placeholder="Masukkan jenjang bibit ..." value="<?= $row->planting_process_seedling_stage ?>"/> <span class="field_note">* Dalam satuan cm</span>
+                                            <label>Jenjang Bibit (cm)</label>
+                                            <input required type="text" name="i_seedling_stage" class="form-control" placeholder="Masukkan jenjang bibit ..." value="<?= $row->planting_process_seedling_stage ?>"/>
                                         </div>
  
                                           <div class="form-group">
@@ -122,6 +125,19 @@
                                           
                                         </select>
                                         </div>
+                                        
+                                         
+                                           <div class="form-group">
+                                        <label>Tanggal Giling</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                            <input type="text" required class="form-control pull-right" id="date_picker2" name="i_milled_date" value="<?= $row->planting_process_milled_date ?>"/>
+                                           
+                                        </div><!-- /.input group -->
+                                    </div><!-- /.form group -->
+                                        
                                        
                                         </div>
                                         <div style="clear:both;"></div>

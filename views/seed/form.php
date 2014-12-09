@@ -1,15 +1,15 @@
 <!-- Content Header (Page header) -->
         
                  <?php
-                if(isset($_GET['did']) && $_GET['did'] == 1){
+                if(isset($_GET['err']) && $_GET['err'] == 1){
                 ?>
                 <section class="content_new">
                    
-                <div class="alert alert-info alert-dismissable">
-                <i class="fa fa-check"></i>
+                <div class="alert alert-warning alert-dismissable">
+                <i class="fa fa-warning"></i>
                 <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
                 <b>Simpan gagal !</b>
-               Password dan confirm password tidak sama
+               Isi data dengan lengkap dan benar
                 </div>
            
                 </section>

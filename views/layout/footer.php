@@ -83,7 +83,14 @@
 				$('#date_picker1').datepicker({
 					format: 'dd/mm/yyyy'
 				});
-			
+				
+				$('#date_picker2').datepicker({
+					format: 'dd/mm/yyyy'
+				});
+				
+				$('#date_picker3').datepicker({
+					format: 'dd/mm/yyyy'
+				});
                 
                 //Timepicker
                 $(".timepicker").timepicker({

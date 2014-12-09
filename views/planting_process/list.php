@@ -56,9 +56,10 @@
                                         <thead>
                                             <tr>
                                             <th width="5%">No</th>
-                                            	<th>Tanggal</th>
+                                            	<th>Tanggal Tanam</th>
+                                                <th>Tanggal Giling</th>
+                                                <th>Tanggal Panen</th>
                                                 <th>Tanah</th>
-                                               
                                                 <th>Varietas</th>
                                                 <th>Model Jarak Tanam</th>
                                                 <th>Jarak Tanam</th>
@@ -76,6 +77,8 @@
                                             <tr>
                                               <td><?= $no?></td>
                                               <td><?= format_date($row['planting_process_date'])?></td>
+                                              <td><?= format_date($row['planting_process_milled_date'])?></td>
+                                              <td><?= format_date($row['planting_process_harvest_date'])?></td>
                                               <td><?= $row['location_name']." (".get_land_area($row['land_id']).")"; ?></td>
                                               <td><?= $row['varieties_name']?></td>
                                               <td><?= $row['planting_distance_model_name']?></td>
@@ -99,7 +102,7 @@
                                         </tbody>
                                           <tfoot>
                                             <tr>
-                                                <td colspan="10"><a href="<?= $add_button ?>" class="btn btn-success " >Add</a></td>
+                                                <td colspan="11"><a href="<?= $add_button ?>" class="btn btn-success " >Add</a></td>
                                                
                                             </tr>
                                         </tfoot>

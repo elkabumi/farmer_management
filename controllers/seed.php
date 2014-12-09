@@ -58,7 +58,11 @@ switch ($page) {
 
 		$i_name = get_isset($i_name);
 		$i_description = get_isset($i_description);
-
+		
+		if($i_name == ""){
+			header('Location: seed.php?page=form&err=1');
+		}else{
+		
 		$data = "'',
 				'$i_name', 
 				'$i_description'
@@ -66,7 +70,8 @@ switch ($page) {
 		create($data);
 
 		header('Location: seed.php?page=list&did=1');
-		
+		}
+				
 	break;
 
 	// Edit data

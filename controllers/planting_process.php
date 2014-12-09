@@ -38,6 +38,7 @@ switch ($page) {
 
 
 			$row = read_id($id);
+			$row->planting_process_milled_date = format_date($row->planting_process_milled_date);
 		
 			$action = "planting_process.php?page=edit&id=$id";
 		} else{
@@ -54,6 +55,7 @@ switch ($page) {
 			$row->planting_process_planting_distance = false;
 			$row->planting_process_seedling_stage = false;
 			$row->seed_id = false;
+			$row->planting_process_milled_date = '';
 
 			$action = "planting_process.php?page=save";
 		}
@@ -73,7 +75,11 @@ switch ($page) {
 		$i_planting_distance = get_isset($i_planting_distance);
 		$i_seedling_stage = get_isset($i_seedling_stage);
 		$i_seed_id = get_isset($i_seed_id);
-
+		$i_milled_date = format_back_date(get_isset($i_milled_date));
+		
+		$harvest_date = date ("Y-m-d", strtotime("+1 year", strtotime($i_date)));
+		
+		
 		$data = "'',
 				'$i_land_id', 
 				'$i_varieties_id',
@@ -82,10 +88,11 @@ switch ($page) {
 				'$i_planting_distance',
 				'$i_seedling_stage',
 				'$i_seed_id',
+				'$harvest_date',
 				'',
 				'',
 				'',
-				''
+				'$i_milled_date'
 				";
 		
 		create($data);
@@ -108,7 +115,7 @@ switch ($page) {
 		$i_planting_distance = get_isset($i_planting_distance);
 		$i_seedling_stage = get_isset($i_seedling_stage);
 		$i_seed_id = get_isset($i_seed_id);
-	
+		$i_milled_date = format_back_date(get_isset($i_milled_date));
 
 		
 					$data = " land_id = '$i_land_id', 
@@ -117,7 +124,8 @@ switch ($page) {
 					planting_distance_model_id = '$i_planting_distance_model_id',
 					planting_process_planting_distance = '$i_planting_distance',
 					planting_process_seedling_stage = '$i_seedling_stage',
-					seed_id = '$i_seed_id'
+					seed_id = '$i_seed_id',
+					planting_process_milled_date = '$i_milled_date'
 
 			";
 			
