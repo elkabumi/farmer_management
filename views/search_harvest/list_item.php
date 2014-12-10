@@ -34,7 +34,7 @@
                                             <tr>
                                             	<td><?= $no_item ?></td>
 												<td><?= format_date($row_item['planting_process_harvest_date']); ?></td>
-                                                <td><?= $row_item['land_area']?></td>
+                                                <td><?= get_land_area($row_item['land_id'])?></td>
 												<td><?= $row_item['location_name'] ?></td>
                                                 <td><? echo "" ?></td>
 												<td><? echo "" ?></td>

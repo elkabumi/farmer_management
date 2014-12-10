@@ -4,7 +4,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             
-                            
+                             <div class="title_page">Data Tanah</div>
                             <div class="box">
                              
                                 <div class="box-body2 table-responsive">
@@ -29,7 +29,7 @@
                                             	<td><?= $no_item ?></td>
 												<td><?= $row_item['planting_process_date']; ?></td>
                                                 <td><?= $row_item['farmer_land_area']?></td>
-												<td><?= $row_item['land_area'] ?></td>
+												<td><?= get_land_area($row_item['land_id']) ?></td>
                                                 <td><?= $row_item['location_name'] ?></td>
 												<td><?= $row_item['varieties_name'] ?></td>
                                             </tr>
@@ -49,5 +49,5 @@
                         </div>
                     </div>
                   
-
+  </section><!-- /.content -->
                 
