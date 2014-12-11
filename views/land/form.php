@@ -36,7 +36,6 @@
                                 <div class="box-body">
                                     
                                    
-                                        <div class="col-md-12">
                                         
                                         
                                         <div class="col-md-6">
@@ -60,7 +59,7 @@
                                             <input readonly="readonly" required type="text" name="i_area" class="form-control" value="<?= get_land_area($row->land_id) ?>"/>     
                                        		</div>
                                        </div>
-                                       </div>
+                                     
                                        <div style="clear:both;"></div>
                                      
                                 </div><!-- /.box-body -->

@@ -37,7 +37,7 @@
                                 <div class="box-body">
                                     
                       
-                                        <div class="col-md-12">
+                                      
                                         <div class="col-md-9">
                                         <div class="form-group">
                                             <label>Kode Kontrak</label>
@@ -81,7 +81,7 @@
                                         </div>
                                        </div>
                                       
-                                        </div>
+                                     
                                         <div style="clear:both;"></div>
                                      
                                 </div><!-- /.box-body -->

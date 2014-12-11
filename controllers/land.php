@@ -41,6 +41,7 @@ switch ($page) {
 			//inisialisasi
 			$row = new stdClass();
 
+			$row->land_id = false;
 			$row->location_id = false;
 			$row->land_area = 0;
 		

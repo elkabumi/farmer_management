@@ -58,7 +58,8 @@
                                 
                                
                                 <div class="box-body">
-                                    	 <div class="col-md-12">
+                                    	
+                                          <div class="col-md-9">
                                       	  <div class="form-group">
                                             <label>Name</label>
                                             <input required type="text" name="i_name" class="form-control" placeholder="Enter name ..." value="<?= $row->user_name ?>"/>
@@ -92,11 +93,23 @@
                                             <input   type="password" name="i_confirm_password" class="form-control" placeholder="Enter confirm password ..." value=""/>
                                         </div>
                                         
+                                         
+                                        </div>
+                                         <div class="col-md-3">
                                          <div class="form-group">
                                          <label>Images</label>
+                                          <?php
+                                        if($id){
+										?>
+                                        <br />
+                                        <img src="<?= "../img/user/".$row->user_img ?>" style="width:100%;"/>
+                                        <?php
+										}
+										?>
                                            <input type="file" name="i_img" id="i_img" />
                                         </div>
                                     </div>
+                                   
                                               
                                               <div style="clear:both;"></div>
 
