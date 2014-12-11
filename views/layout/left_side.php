@@ -60,7 +60,7 @@
                       <li <?php if(isset($_SESSION['menu_active']) && $_SESSION['menu_active'] == 3){ echo "class='active'"; } ?>>
                             <a href="land.php">
                                 <i class="fa fa-pagelines"></i>
-                                <span>Tanah</span>
+                                <span>Hamparan Tanah</span>
 
                                
                             </a>

@@ -54,4 +54,13 @@ function delete($table,$param,$id){
 	mysql_query("delete from ".$table." where ".$param." = '$id'");
 }
 
+function select_farmer($id,$i_farmer_id){
+	$query = mysql_query("select a.*,b.farmer_name
+							from farmer_lands a 
+							JOIN farmers b ON b.farmer_id = a.farmer_id
+							WHERE land_id = '$id' and a.farmer_id = '$i_farmer_id'
+			
+			");
+	return $query;
+}
 ?>

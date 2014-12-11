@@ -54,7 +54,8 @@
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                            <th width="5%">No</th>
+                                            	<th width="5%">No</th>
+                                            	<th>Code</th>
                                                 <th>Luas Tanah (m3)</th>
                                                 <th>Lokasi Tanah</th>
                                                 <th>Config</th>
@@ -66,7 +67,8 @@
                                             while($row = mysql_fetch_array($query)){
                                             ?>
                                             <tr>
-                                            <td><?= $no?></td>
+                                            	<td><?= $no?></td>
+                                                <td><?= $row['land_code']?></td>
                                                 <td><?= get_land_area($row['land_id'])?></td>
                                                 <td><?= $row['location_name']?></td>
                                                

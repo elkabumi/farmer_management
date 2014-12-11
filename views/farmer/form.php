@@ -11,6 +11,21 @@
                 <b>Simpan gagal !</b>
                Password dan confirm password tidak sama
                 </div>
+                </section>
+                <?php
+                }
+                ?>
+                 <?php
+                if(isset($_GET['did']) && $_GET['did'] == 2){
+                ?>
+                <section class="content_new">
+                   
+                <div class="alert alert-info alert-dismissable">
+                <i class="fa fa-check"></i>
+                <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                <b>Simpan sukses!</b>
+                </div>
+             
            
                 </section>
                 <?php
@@ -37,7 +52,7 @@
                                 <div class="box-body">
                                     
                       
-                                      
+                                        <div class="col-md-12">
                                         <div class="col-md-9">
                                         <div class="form-group">
                                             <label>Kode Kontrak</label>
@@ -81,7 +96,7 @@
                                         </div>
                                        </div>
                                       
-                                     
+                                        </div>
                                         <div style="clear:both;"></div>
                                      
                                 </div><!-- /.box-body -->
@@ -96,4 +111,67 @@
                        </form>
                         </div><!--/.col (right) -->
                     </div>   <!-- /.row -->
+                    <?php
+              if(isset($_GET['id'])){
+			  ?>
+                    <div class="row">
+                        <div class="col-xs-12">
+                             <div class="title_page">Data Tanah Petani</div>
+                            
+                            <div class="box">
+                             
+                                <div class="box-body2 table-responsive">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                            <th width="5%">No</th>
+                                             	<th>Luas Tanah</th>
+                                                <th>Code Hamparan</th>
+                                                <th>Lokasi</th>
+                                              	<th>Luas Hamparan</th> 
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $q_land = select_land($id);
+											$no_land = 1;
+                                            while($r_land = mysql_fetch_array($q_land)){
+                                            ?>
+                                            <tr>
+                                            	<td><?= $no_land?></td>
+                                                <td><?= $r_land['farmer_land_area']?></td>
+                                                <td><?= $r_land['land_code']?></td>
+                                                <td><?= $r_land['location_name']?></td>
+                                                <td><?= get_land_area($r_land['land_id'])?></td>
+                                              
+                                                 <td style="text-align:center;">
+
+                                                    <a href="farmer.php?page=form_farmer&f_id=<?= $r_land['farmer_land_id']?>&id=<?= $_GET['id']?>" class="btn btn-default" ><i class="fa fa-pencil"></i></a>
+                                                    <a href="javascript:void(0)" onclick="confirm_delete(<?= $r_land['farmer_land_id']; ?>,'farmer.php?page=delete_land&id=<?= $_GET['id'] ?>&f_id=')" class="btn btn-default" ><i class="fa fa-trash-o"></i></a>
+
+                                                </td> 
+                                            </tr>
+                                            <?php
+											$no_farmer_land++;
+                                            }
+                                            ?>
+
+                                           
+                                          
+                                        </tbody>
+                                          <tfoot>
+                                            <tr>
+                                                <td colspan="10"><a href="farmer.php?page=form_farmer&id=<?= $_GET['id']?>" class="btn btn-success " >Add</a></td>
+                                               
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div>
+                    </div>
+                    <?php
+			  }
+					?>
                 </section><!-- /.content -->

@@ -1,24 +1,29 @@
 <?php
-function get_user_code(){
-	$query = mysql_query("select user_code from users");
+function get_hamparan_code(){
+	$query = mysql_query("select land_code from counters");
 	$result = mysql_fetch_array($query);
-	$code = ($result['user_code']) ? $result['user_code'] + 1 : 1;
+	$code = ($result['land_code']) ? $result['land_code'] + 1 : 1;
 	
 	if(strlen($code) == 1){
-		$code = "000".$code;
+		$code = "0000".$code;
 	}else if(strlen($code) == 2){
-		$code = "00".$code;
+		$code = "000".$code;
 	}else if(strlen($code) == 3){
+		$code = "00".$code;
+	}else if(strlen($code) == 4){
 		$code = "0".$code;
 	}
 	
-	return "A".$code;
+	return "HT".$code;
+}
+function edit_hamparan_code(){
+	mysql_query("update counters set land_code = land_code + 1");
 }
 function get_land_area($land_id){
 	$query = mysql_query("select sum(farmer_land_area) as jumlah from farmer_lands where land_id = '$land_id'");
 	$row = mysql_fetch_object($query);
 	$result = ($row->jumlah) ? $row->jumlah : 0;
-	return $result." m3";
+	return $result;
 }
 function format_rupiah($angka){
   $rupiah=number_format($angka,0,',','.');

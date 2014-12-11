@@ -62,13 +62,13 @@
                                         </div>
                                         -->
                                         <div class="form-group">
-                                            <label>Nama Petani</label>
-                                           <select id="basic" name="i_farmer_id" class="selectpicker show-tick form-control" data-live-search="true">
+                                            <label>Hamparan</label>
+                                           <select id="basic" name="i_land_id" class="selectpicker show-tick form-control" data-live-search="true">
 											<?php
-                                            $query_farmer = mysql_query("select * from  farmers order by  farmer_name");
-                                            while($row_farmer = mysql_fetch_array($query_farmer)){
+                                            $query_land = mysql_query("select * from  lands order by  land_code");
+                                            while($row_land = mysql_fetch_array($query_land)){
                                             ?>
-                                            <option value="<?= $row_farmer['farmer_id']?>" <?php if($row_farmer['farmer_id'] == $row->farmer_id){ ?>selected <?php } ?>  ><?= $row_farmer['farmer_name'] ?></option>
+                                            <option value="<?= $row_land['land_id']?>" <?php if($row_land['land_id'] == $row->land_id){ ?>selected <?php } ?>  ><?= $row_land['land_code'] ?></option>
                                             <?php
                                             }
                                             ?>

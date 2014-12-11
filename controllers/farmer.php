@@ -49,6 +49,37 @@ switch ($page) {
 		include '../views/farmer/form.php';
 		get_footer();
 	break;
+	
+	case 'form_farmer':
+		get_header();
+		
+		$id = (isset($_GET['id'])) ? $_GET['id'] : null;
+		$f_id = (isset($_GET['f_id'])) ? $_GET['f_id'] : null;
+		
+		$close_button = "farmer.php?page=form&id=$id";
+
+		
+		if($f_id){
+			$title = ucfirst("Form Edit Tanah Petani");
+
+			$row = read_farmer_land_id($f_id);
+		
+			$action = "farmer.php?page=edit_land&id=$id&f_id=$f_id";
+		} else{
+			$title = ucfirst("Form Input Tanah Petani");
+
+			//inisialisasi
+			$row = new stdClass();
+			
+			$row->farmer_id = false;
+			$row->farmer_land_area 	 = 0;
+			
+			$action = "farmer.php?page=save_land&id=$id";
+		}
+
+		include '../views/farmer/form_land.php';
+		get_footer();
+	break;
 
 	case 'save':
 		extract($_POST);
@@ -77,10 +108,42 @@ switch ($page) {
 					'$image'
 			";
 			
-			create($data);
+			create("farmers",$data);
 			
 			header('Location: farmer.php?page=list&did=1');
 
+	break;
+	
+	case 'save_land':
+	
+		extract($_POST);
+
+		$i_land_id = get_isset($i_land_id);
+		$i_luas = get_isset($i_luas);
+		
+		
+		$id = (isset($_GET['id'])) ? $_GET['id'] : null;
+		
+		$validasi = select_farmer($id,$i_land_id);
+		
+		if(mysql_num_rows($validasi)>0){
+			
+			header("Location: farmer.php?page=form_land&did=2&id=$id");
+		}else{
+		
+		$data = "'',
+				'$i_land_id',
+				'$id',
+				'$i_luas'
+			";
+			//echo $data;
+		//$update = 	"land_area = land_area  + ".$i_luas."";
+		create("farmer_lands", $data);
+		//update("lands", $update,"land_id",$id);
+		
+		header("Location: farmer.php?page=form&did=2&id=$id");
+		}
+		
 	break;
 
 	case 'edit':
@@ -125,10 +188,37 @@ switch ($page) {
 			
 			
 		}
-		update($data, $id);
+		update("farmer",$data,"farmer_id", $id);
 		header('Location: farmer.php?page=list&did=2');
 
 		
+
+	break;
+	
+	case 'edit_land':
+
+		extract($_POST);
+		$id = get_isset($_GET['id']);
+		//$i_number = get_isset($i_number);
+		$i_land_id = get_isset($i_land_id);
+		$i_luas = get_isset($i_luas);
+		
+		$f_id = (isset($_GET['f_id'])) ? $_GET['f_id'] : null;
+		$get_luas = get_luas($f_id);
+		
+		$update = 	"land_area = land_area  - ".$get_luas."";
+		
+		update("lands", $update,"land_id",$id);
+	
+		$data = " 
+				  farmer_id 	 = '$i_farmer_id',
+				  farmer_land_area  = '$i_luas'
+			";
+		$update2 = 	"land_area = land_area  + ".$i_luas."";
+		update("farmer_lands", $data,"farmer_land_id", $f_id);
+		
+		update("lands", $update2,"land_id",$id);	
+		header("Location: farmer.php?page=form&did=2&id=$id");
 
 	break;
 
@@ -147,6 +237,24 @@ switch ($page) {
 		delete($id);
 
 		header('Location: farmer.php?page=list&did=3');
+
+	break;
+	
+	case 'delete_land':
+
+		$id = get_isset($_GET['id']);	
+		$f_id = (isset($_GET['f_id'])) ? $_GET['f_id'] : null;
+		
+		$get_luas = get_luas($f_id);
+		
+		$update = 	"land_area = land_area  - ".$get_luas."";
+		
+		update("lands", $update,"land_id",$id);
+		
+		delete("farmer_lands","farmer_land_id", $f_id);
+
+			
+		header("Location: farmer.php?page=form&did=2&id=$id");
 
 	break;
 }
