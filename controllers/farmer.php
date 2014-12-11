@@ -51,11 +51,7 @@ switch ($page) {
 	break;
 
 	case 'save':
-	
-	
-
 		extract($_POST);
-
 
 		$i_code = get_isset($i_code);
 		$i_name = get_isset($i_name);
@@ -66,7 +62,6 @@ switch ($page) {
 		
 		$i_img = ($_FILES['i_img']['name']) ? $_FILES['i_img']['name'] : "";
 		$i_date = date("Y-m-d-his");
-		$path = '../img/farmer/';
 		
 		if($i_img != ""){
 			$image = $path.$i_date."_".$_FILES['i_img']['name'];
@@ -126,7 +121,7 @@ switch ($page) {
 					farmer_contract_code 	= '$i_code',
 					farmer_name 	 		= '$i_name',
 					farmer_address 	 		= '$i_no_ktp', 
-					farmer_identity_number	= '$i_alamat',";
+					farmer_identity_number	= '$i_alamat'";
 			
 			
 		}

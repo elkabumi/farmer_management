@@ -76,7 +76,7 @@ switch ($page) {
 			$row->farmer_id = false;
 			$row->farmer_land_area 	 = 0;
 			
-			$action = "land.php?page=save_farmer_land&id=$id";;
+			$action = "land.php?page=save_farmer_land&id=$f_id";;
 		}
 
 		include '../views/land/form_farmer_land.php';
@@ -117,9 +117,9 @@ switch ($page) {
 				'$i_luas'
 			";
 			echo $data;
-		$update = 	"land_area = land_area  + ".$i_luas."";
+		//$update = 	"land_area = land_area  + ".$i_luas."";
 		create("farmer_lands", $data);
-		update("lands", $update,"land_id",$id);
+		//update("lands", $update,"land_id",$id);
 		
 		header("Location: land.php?page=form&did=1&id=$id");
 		
@@ -169,11 +169,11 @@ switch ($page) {
 				  farmer_id 	 = '$i_farmer_id',
 				  farmer_land_area  = '$i_luas'
 			";
-		$update2 = 	"land_area = land_area  + ".$i_luas."";
+		//$update2 = 	"land_area = land_area  + ".$i_luas."";
 		update("farmer_lands", $data,"farmer_land_id", $id);
 		
-		update("lands", $update2,"land_id",$id);	
-		header("Location: land.php?page=form&did=2&id=$id");
+		//update("lands", $update2,"land_id",$id);	
+		//header("Location: land.php?page=form&did=2&id=$id");
 
 	break;
 	
