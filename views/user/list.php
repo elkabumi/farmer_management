@@ -56,7 +56,7 @@
                                         <thead>
                                             <tr>
                                             <th width="5%">No</th>
-                                                <th>Code</th>
+                                                <th>User Login</th>
                                                 <th>Name</th>
                                                   <th>Type</th>
                                                    <th>Phone</th> 
@@ -69,16 +69,13 @@
                                             ?>
                                             <tr>
                                             <td><?= $no?></td>
-                                                <td><?= $row['user_code']?></td>
+                                               <td><?= $row['user_login']?></td>
                                                 <td><?= $row['user_name']?></td>
                                                 <?php
-												if($row['user_type_id'] == 1){?>
-                                                    <td>Admin</td>
-                                                    <? }else{ ?>
-                                                    <td>Eksternal</td>
-                                                    <?
-													}
+												$user_type = array('','Admin',"Non Admin");
+												
                                                 ?>
+                                                <td><?= $user_type[$row['user_type_id']]?></td>
                                                  <td><?= $row['user_phone']?></td>
                                                
                                                <!-- <td style="text-align:center;">

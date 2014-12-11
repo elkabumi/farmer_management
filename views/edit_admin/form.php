@@ -1,16 +1,4 @@
 <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        <?= $title?> 
-                        <small></small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><?= $title?> </a></li>
-                        
-                        <li class="active">Form</li>
-                    </ol>
-                </section>
-
                  <?php
                 if(isset($_GET['did']) && $_GET['did'] == 1){
                 ?>
@@ -62,7 +50,7 @@
                             <!-- general form elements disabled -->
 
                           
-                          
+                           <div class="title_page"> <?= $title ?></div>
 
                              <form role="form" action="<?= $action?>" method="post">
 
@@ -119,7 +107,7 @@
                              
                     
                     <div class="box-footer">
-                                <input class="btn btn-cokelat" type="submit" value="Save"/>
+                                <input class="btn btn-success" type="submit" value="Save"/>
                              	
                                 </div>
                             
