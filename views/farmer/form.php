@@ -38,28 +38,15 @@
                                     
                       
                                         <div class="col-md-12">
-                                        <div class="col-md-6">
+                                        <div class="col-md-9">
                                         <div class="form-group">
                                             <label>Kode Kontrak</label>
                                             <input required type="text" name="i_code" class="form-control" placeholder="Masukan Kode Kontrak..." value="<?= $row->farmer_contract_code ?>"/>
                                         </div>
                                         
-                                      <div class="form-group">
-                                         <label>Images</label>
-                                         <?php
-                                        if($id){
-										?>
-                                        <br />
-                                        <img src="<?= $row->farmer_identity_img ?>" width="100" />
-                                        <?php
-										}
-										?>
-                                           <input type="file" name="i_img" id="i_img" />
-                                        </div>
+                                    
                                         
-                                        </div>
- 								<div class="col-md-6">
-                                       
+                                
                                         
                                         <div class="form-group">
                                           <label>Nama</label>
@@ -69,15 +56,30 @@
                                             <label>Nomor KTP</label>
                                             <input required type="text" name="i_no_ktp" class="form-control" placeholder="Masukan Nomor KTP ..." value="<?= $row->farmer_identity_number ?>"/>
                                         </div>
-                                        </div>
-                                        
- 								<div class="col-md-12">
+                                      
+ 								
                                          <div class="form-group">
                                             <label>Alamat</label>
                                            <textarea class="form-control" name="i_alamat" rows="3" placeholder="Masukan Alamat ..."><?= $row->farmer_address ?></textarea>
                                         </div>
-                                       </div> 
+                                      
+                                        </div>
+                                      
                                         
+ 										<div class="col-md-3">
+                                          <div class="form-group">
+                                         <label>Images</label>
+                                         <?php
+                                        if($id){
+										?>
+                                        <br />
+                                        <img src="<?= $row->farmer_identity_img ?>" style="width:100%;"/>
+                                        <?php
+										}
+										?>
+                                           <input type="file" name="i_img" id="i_img" />
+                                        </div>
+                                       </div>
                                       
                                         </div>
                                         <div style="clear:both;"></div>
