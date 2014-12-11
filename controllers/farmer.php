@@ -113,15 +113,15 @@ switch ($page) {
 				$data = "
 					farmer_contract_code 	= '$i_code',
 					farmer_name 	 		= '$i_name',
-					farmer_address 	 		= '$i_no_ktp', 
-					farmer_identity_number	= '$i_alamat', 
+					farmer_address 	 		= '$i_alamat', 
+					farmer_identity_number	= '$i_no_ktp', 
 					farmer_identity_img		= '$image'";
 		}else{
 				$data = "
 					farmer_contract_code 	= '$i_code',
 					farmer_name 	 		= '$i_name',
-					farmer_address 	 		= '$i_no_ktp', 
-					farmer_identity_number	= '$i_alamat'";
+					farmer_address 	 		= '$i_alamat', 
+					farmer_identity_number	= '$i_no_ktp'";
 			
 			
 		}
