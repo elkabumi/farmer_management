@@ -37,7 +37,7 @@
                                     
                                         <!-- text input -->
                                         
-                                       <!--  <div class="form-group">
+                                      <!-- <div class="form-group">
                                             <label>Code</label>
                                             <input required type="text" name="i_code" class="form-control" placeholder="Enter code ..." value="<?= $row->user_code ?>"/>
                                         </div>-->
@@ -60,8 +60,8 @@
                                         <div class="form-group">
                                           <label>Type</label>
                                            <select name="i_type" size="1" class="form-control"/>
-                                             <option value="2">Admin</option>
-                                           <option value="3">Non Admin</option>       
+                                             <option value="1">Admin</option>
+                                           <option value="2">Non Admin</option>       
                                            </select>                                    
                                   		</div>
 

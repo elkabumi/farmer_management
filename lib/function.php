@@ -1,5 +1,19 @@
 <?php
-
+function get_user_code(){
+	$query = mysql_query("select user_code from users");
+	$result = mysql_fetch_array($query);
+	$code = ($result['user_code']) ? $result['user_code'] + 1 : 1;
+	
+	if(strlen($code) == 1){
+		$code = "000".$code;
+	}else if(strlen($code) == 2){
+		$code = "00".$code;
+	}else if(strlen($code) == 3){
+		$code = "0".$code;
+	}
+	
+	return "A".$code;
+}
 function get_land_area($land_id){
 	$query = mysql_query("select sum(farmer_land_area) as jumlah from farmer_lands where land_id = '$land_id'");
 	$row = mysql_fetch_object($query);

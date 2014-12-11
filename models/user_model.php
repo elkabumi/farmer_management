@@ -1,10 +1,7 @@
 <?php
 
 function select(){
-	$query = mysql_query("select *
-		from users a 
-			
-			");
+	$query = mysql_query("select * from users");
 	return $query;
 }
 
