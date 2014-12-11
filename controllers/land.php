@@ -76,7 +76,7 @@ switch ($page) {
 			$row->farmer_id = false;
 			$row->farmer_land_area 	 = 0;
 			
-			$action = "land.php?page=save_farmer_land&id=$f_id";;
+			$action = "land.php?page=save_farmer_land&id=$id";
 		}
 
 		include '../views/land/form_farmer_land.php';
@@ -170,10 +170,10 @@ switch ($page) {
 				  farmer_land_area  = '$i_luas'
 			";
 		//$update2 = 	"land_area = land_area  + ".$i_luas."";
-		update("farmer_lands", $data,"farmer_land_id", $id);
+		update("farmer_lands", $data,"farmer_land_id", $f_id);
 		
 		//update("lands", $update2,"land_id",$id);	
-		//header("Location: land.php?page=form&did=2&id=$id");
+		header("Location: land.php?page=form&did=2&id=$id");
 
 	break;
 	
