@@ -25,7 +25,7 @@
                 <i class="fa fa-check"></i>
                 <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
                 <b>Gagal !</b>
-              	Data Petani sudah ada
+              	Data Hambaran sudah ada
                 </div>
            
                 </section>

@@ -128,7 +128,7 @@ switch ($page) {
 		
 		if(mysql_num_rows($validasi)>0){
 			
-			header("Location: farmer.php?page=form_land&did=2&id=$id");
+			header("Location: farmer.php?page=form_farmer&did=2&id=$id");
 		}else{
 		
 		$data = "'',
