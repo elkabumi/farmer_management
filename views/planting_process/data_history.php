@@ -44,7 +44,8 @@
 		join seeds e on e.seed_id = a.seed_id
 		join locations f on f.location_id = b.location_id
 		WHERE a.land_id = '.$land_id.'
-		order by planting_process_id ');
+		order by planting_process_id
+		LIMIT 3 ');
                                            while($row = mysql_fetch_array($query)){
                                             ?>
                                             <tr>
