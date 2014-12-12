@@ -40,8 +40,11 @@ switch ($page) {
 			
 			//inisialisasi
 			$row = new stdClass();
+			
+			$get_code = get_land_code();
 
 			$row->land_id = false;
+			$row->land_code = $get_code;
 			$row->location_id = false;
 			$row->land_area = 0;
 		
@@ -87,11 +90,13 @@ switch ($page) {
 	case 'save':
 	
 		extract($_POST);
-
+		
+		$i_code = get_isset($i_code);
 		$i_location_id = get_isset($i_location_id);
 		$i_area = get_isset($i_area);
 		
 		$data = "'',
+				'$i_code'.
 				'$i_area',
 				'$i_location_id'
 			
@@ -135,10 +140,12 @@ switch ($page) {
 		
 		$id = get_isset($_GET['id']);	
 		
+		$i_code = get_isset($i_code);
 		$i_location_id = get_isset($i_location_id);
 		$i_area = get_isset($i_area);
 		
 		$data = "
+				land_code = '$i_code',
 				land_area = '$i_area',
 				location_id  = '$i_location_id'
 			
