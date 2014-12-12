@@ -45,7 +45,7 @@
                           
                           
 
-                             <form action="<?= $action?>" method="post" enctype="multipart/form-data" role="form">
+                             <form  class="cmxform" id="createForm" action="<?= $action?>" method="post" enctype="multipart/form-data" role="form">
 
                             <div class="box box-cokelat">
                                 
@@ -77,7 +77,7 @@
                                        
                                        	<div class="form-group"> 
                                                 <label>Luas Tanah (m3)</label>
-                                            <input required type="text" name="i_luas" class="form-control" placeholder="Masukkan poin ..." value="<?= $row->farmer_land_area ?>"/>             
+                                            <input required type="number" name="i_luas" class="form-control" placeholder="Masukkan poin ..." value="<?= $row->farmer_land_area ?>" title="Luas Tanah Tidak boleh kosong dan harus diisi dengan angka"/>             
                                        
                                        
                                     </div>

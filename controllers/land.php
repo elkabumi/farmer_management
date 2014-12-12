@@ -78,7 +78,7 @@ switch ($page) {
 			$row = new stdClass();
 			
 			$row->farmer_id = false;
-			$row->farmer_land_area 	 = 0;
+			$row->farmer_land_area 	 = false;
 			
 			$action = "land.php?page=save_farmer_land&id=$id";
 		}

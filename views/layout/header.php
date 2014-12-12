@@ -81,7 +81,8 @@ if(!$_SESSION['login']){
       
           <!-- AdminLTE App -->
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
-       
+          <script src="../js/plugins/validate/jquery.validate.js" type="text/javascript"></script>
+
 
     </head>
     <body class="skin-blue">
@@ -174,6 +175,46 @@ if(!$_SESSION['login']){
             <aside class="right-side">                
                 <!-- Content Header (Page header) -->
         
+				<script type="text/javascript">
+
+					$().ready(function() {
+						
+						var container = $('div.alert.alert-danger-1');
+						
+						// validate the form when it is submitted
+						var validator = $("#createForm").validate({
+							errorContainer: container,
+							errorLabelContainer: $("ol", container),
+							wrapper: 'li'
+						});
+						
+					});
+        		</script>
+
+<style>	
+   
+	div.alert.alert-danger-1 {
+		display: none
+	}
+	.alert.alert-danger-1 label.error {
+		display: inline;
+	}
+
+	
+	form.cmxform label.error {
+		display: block;
+		margin-left: 1em;
+		width: auto;
+	}
+	
+	</style>
+ <div class="alert alert-danger-1">
+                   	 <ol>
+                       
+                    </ol>
+            	</div>
+
+
 
 
 
