@@ -1,5 +1,6 @@
 <?php			  
 	include'../../lib/config.php';
+	include'../../lib/function.php';
 	$land_id 	 = $_GET['land_id'];
 	
 		
@@ -35,20 +36,28 @@
                                            
 										   <?php
                                            $no = 1;
-										   $query=mysql_query('SELECT * FROM  planting_processes WHERE land_id = '.$land_id.'');
+										   $query=mysql_query('select a.*, b.land_area, c.varieties_name, d.planting_distance_model_name, e.seed_name, f.location_name
+		from planting_processes a 
+		join lands b on b.land_id = a.land_id
+		join varieties c on c.varieties_id = a.varieties_id
+		join planting_distance_models d on d.planting_distance_model_id = a.planting_distance_model_id
+		join seeds e on e.seed_id = a.seed_id
+		join locations f on f.location_id = b.location_id
+		WHERE a.land_id = '.$land_id.'
+		order by planting_process_id ');
                                            while($row = mysql_fetch_array($query)){
                                             ?>
                                             <tr>
                                               <td><?= $no?></td>
-                                              <td></td>
-                                              <td><?= $row['land_id']?></td>
-                                              <td></td>
-                                              <td></td>
-                                              <td></td>
-                                              <td></td>
-                                              <td></td>
-                                              <td></td>
-                                              <td></td>
+                                              <td><?= format_date($row['planting_process_date'])?></td>
+                                              <td><?= format_date($row['planting_process_milled_date'])?></td>
+                                              <td><?= format_date($row['planting_process_harvest_date'])?></td>
+                                              <td><?= $row['location_name']." (".get_land_area($row['land_id']).")";?></td>
+                                              <td><?= $row['varieties_name']?></td>
+                                              <td><?= $row['planting_distance_model_name']?></td>
+                                              <td><?= $row['planting_process_planting_distance']." cm"?></td>
+                                              <td><?= $row['planting_process_seedling_stage']." cm"?></td>
+                                              <td><?= $row['seed_name']?></td>
                                         
                                             </tr>
                                             <?php

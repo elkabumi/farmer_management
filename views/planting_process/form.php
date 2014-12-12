@@ -74,15 +74,10 @@ function load_data_participant(str)
                                 <div class="box-body">
                                     
                                      
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                         
                                             <div class="form-group">
                                            <label>Hamparan Tanah</label>
-           
-                                     
-                                         
-                                      
-                                        
                                         <select id="basic" name="i_land_id" class="selectpicker show-tick form-control" data-live-search="true" onChange="load_data_participant(this.value)" >
                                       <option value="0">---</option>
                                      	<?php
@@ -92,14 +87,12 @@ function load_data_participant(str)
                                         <?php
                                         }
                                         ?>
-                                        
-                                          
                                         </select>  
-                                          
-                                          
-                                       
                                         </div>
-                                        
+                                        </div>
+                                        <div id="table_history">
+</div>
+                                         <div class="col-md-6">
                                            <div class="form-group">
                                            <label>Varietas</label>
                                             <select id="basic" name="i_varieties_id" class="selectpicker show-tick form-control" data-live-search="true" >
@@ -143,7 +136,6 @@ function load_data_participant(str)
                                           
                                         </select>
                                         </div>
-                                        
                                         </div>
                                         <div class="col-md-6">
                                         <div class="form-group">
