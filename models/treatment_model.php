@@ -1,7 +1,7 @@
 <?php
 
 function select(){
-	$query = mysql_query("select a.*, b.land_area, c.varieties_name, d.planting_distance_model_name, e.seed_name, f.location_name
+	$query = mysql_query("select a.*, b.land_code, b.land_area, c.varieties_name, d.planting_distance_model_name, e.seed_name, f.location_name
 		from planting_processes a 
 		join lands b on b.land_id = a.land_id
 		join varieties c on c.varieties_id = a.varieties_id
@@ -12,6 +12,33 @@ function select(){
 		");
 	return $query;
 }
+
+function select_search($i_search){
+	
+	$search = explode(" ", $i_search);
+	$parameter = ' where ';
+	$jml = count($search) - 1;
+	for($i=0; $i<=$jml; $i++){
+		if($i != 1){
+			$parameter .= " or ";
+		}
+		$parameter .= " h.farmer_name like %$search[$i]% or f.location_name like %$search[$i]% or c.varieties_name like %$search[$i]% or e.seed_name like %$search[$i]% ";
+	}
+	
+	$query = mysql_query("select a.*, b.land_code, b.land_area, c.varieties_name, d.planting_distance_model_name, e.seed_name, f.location_name
+		from planting_processes a 
+		join lands b on b.land_id = a.land_id
+		join varieties c on c.varieties_id = a.varieties_id
+		join planting_distance_models d on d.planting_distance_model_id = a.planting_distance_model_id
+		join seeds e on e.seed_id = a.seed_id
+		join locations f on f.location_id = b.location_id
+		join farmer_lands g on g.land_id = b.land_id
+		join farmers h on h.farmer_id = g.farmer_id
+		order by planting_process_id
+		");
+	return $query;
+}
+
 
 function select_treatment($planting_process_id){
 	$query = mysql_query("select a.*, b.treatment_type_name from treatments a

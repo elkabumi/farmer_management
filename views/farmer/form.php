@@ -152,7 +152,7 @@
                                                 </td> 
                                             </tr>
                                             <?php
-											$no_farmer_land++;
+											$no_land++;
                                             }
                                             ?>
 

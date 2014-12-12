@@ -1,5 +1,6 @@
 
                 <?php
+				$planting_process_id = $_GET['planting_process_id'];
                 if(isset($_GET['did']) && $_GET['did'] == 1){
                 ?>
                 <section class="content_new">
@@ -75,7 +76,7 @@
                                               <td><?= $row['treatment_description']?></td>
                                               <td style="text-align:center;">
 
-                                                    <a href="treatment.php?page=form&planting_process_id=<?= $row['planting_process_id']?>&id=<?= $row['treatment_id']?>" class="btn btn-default" ><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" onClick="edit_data_treatment(<?= $planting_process_id.",". $row['treatment_id'] ?>)"  class="btn btn-default" ><i class="fa fa-pencil"></i></a>
                                                     <a href="javascript:void(0)" onclick="confirm_delete(<?= $row['treatment_id']; ?>,'treatment.php?page=delete&planting_process_id=<?= $row['planting_process_id']?>&id=')" class="btn btn-default" ><i class="fa fa-trash-o"></i></a>
 
                                                 </td>

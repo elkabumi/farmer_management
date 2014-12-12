@@ -38,6 +38,22 @@ switch ($page) {
 		get_footer();
 	break;
 	
+	case 'list_treatment_new':
+		//get_header($title);
+		$title = ucfirst("Data Treatment");
+		
+		$planting_process_id = get_isset($_GET['planting_process_id']);	
+		
+		$row_tanam = read_tanam_id($planting_process_id);
+		
+		$query = select_treatment($planting_process_id);
+		$add_button = "treatment.php?page=form&planting_process_id=$planting_process_id";
+		$close_button = "treatment.php?page=list";
+		
+		include '../views/treatment/list_treatment_new.php';
+		//get_footer();
+	break;
+	
 	// Form input dan edit
 	case 'form':
 	
@@ -71,6 +87,21 @@ switch ($page) {
 		include '../views/treatment/form.php';
 		get_footer();
 	break;
+	
+	case 'search':
+
+		get_header($title);
+		
+		$i_search = get_isset($_POST['i_search']);
+		
+		$query = select_search($i_search);
+		$add_button = "treatment.php?page=form";
+
+
+		include '../views/treatment/list.php';
+		get_footer();
+		
+	break;
 
 	// simpan data
 	case 'save':
@@ -91,7 +122,7 @@ switch ($page) {
 		
 		create($data);
 
-		header("Location: treatment.php?page=list_treatment&planting_process_id=$planting_process_id&did=1");
+		header("Location: treatment.php?page=list&planting_process_id=$planting_process_id&did=1");
 		
 	break;
 
@@ -115,9 +146,11 @@ switch ($page) {
 					treatment_description = '$i_description'
 			";
 			
+		//	echo $data;
+			
 		update($data, $id);
 			
-		header("Location: treatment.php?page=list_treatment&did=2&planting_process_id=$planting_process_id");
+		header("Location: treatment.php?page=list&did=2&planting_process_id=$planting_process_id");
 
 	break;
 

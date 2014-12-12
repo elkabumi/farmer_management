@@ -38,6 +38,12 @@
                     "bInfo": false,
                     "bAutoWidth": false
                 });
+				
+				$('#example99').dataTable({
+                   
+                    "bFilter": false,
+                   
+                });
 				/*
 				$(function() {
 				  $('#new_table').footable();

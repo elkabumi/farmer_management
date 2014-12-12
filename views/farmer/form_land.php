@@ -65,10 +65,14 @@
                                             <label>Hamparan</label>
                                            <select id="basic" name="i_land_id" class="selectpicker show-tick form-control" data-live-search="true">
 											<?php
-                                            $query_land = mysql_query("select * from  lands order by  land_code");
+                                            $query_land = mysql_query("select a.*, b.location_name 
+															from lands a 
+															join locations b on b.location_id = a.location_id
+															order by  
+															land_code");
                                             while($row_land = mysql_fetch_array($query_land)){
                                             ?>
-                                            <option value="<?= $row_land['land_id']?>" <?php if($row_land['land_id'] == $row->land_id){ ?>selected <?php } ?>  ><?= $row_land['land_code'] ?></option>
+                                            <option value="<?= $row_land['land_id']?>" <?php if($row_land['land_id'] == $row->land_id){ ?>selected <?php } ?>  ><?= $row_land['land_code']." - ".$row_land['location_name'] ?></option>
                                             <?php
                                             }
                                             ?>
