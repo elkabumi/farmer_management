@@ -16,7 +16,7 @@
                 <?php
                 }
                 ?>
-
+  				
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
@@ -28,7 +28,7 @@
                           
                           <div class="title_page"> <?= $title ?></div>
 
-                             <form action="<?= $action?>" method="post" enctype="multipart/form-data" role="form">
+                             <form class="cmxform" id="createForm" action="<?= $action?>" method="post" enctype="multipart/form-data" role="form">
 
                             <div class="box box-cokelat">
                                 
@@ -40,7 +40,7 @@
                                         
                                         <div class="form-group">
                                             <label>Nama</label>
-                                            <input required type="text" name="i_name" class="form-control" placeholder="Masukkan nama ..." value="<?= $row->seed_name ?>"/>
+                                            <input required type="text" name="i_name" class="form-control" placeholder="Masukkan nama ..." value="<?= $row->seed_name ?>"  title="Nama Tidak boleh kosong"/>
                                         </div>
  
                                           <div class="form-group">

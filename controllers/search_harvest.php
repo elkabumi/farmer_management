@@ -60,7 +60,9 @@ switch ($page) {
 			//echo $date1."-".$date2."-".$i_location_id."-".$i_varieties_id."-".$i_planting_distances_model_id."-".$i_seed_id;
 			
 			$query_item = select_summary($date1,$date2,$i_location_id,$i_varieties_id,$i_planting_distances_model_id,$i_seed_id);
-			
+			$total_tanah = get_total_tanah($date1,$date2,$i_location_id,$i_varieties_id,$i_planting_distances_model_id,$i_seed_id);
+		
+			include '../views/search_harvest/list_total.php';
 			include '../views/search_harvest/list_item.php';
 		}
 		

@@ -61,6 +61,7 @@ switch ($page) {
 		}
 
 		include '../views/planting_process/form.php';
+		include '../views/planting_process/list_history.php';
 		get_footer();
 	break;
 

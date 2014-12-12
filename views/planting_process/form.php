@@ -1,3 +1,41 @@
+
+<script>
+function load_data_participant(str)
+{
+	
+	if (str=="" || str == 0)
+	{
+	
+	document.getElementById("table_history").innerHTML="";
+	
+	return;
+	} 
+	if (window.XMLHttpRequest)
+	{// kode for IE7+, Firefox, Chrome, Opera, Safari
+	xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// kode for IE6, IE5
+	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+	if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+		
+		document.getElementById("table_history").innerHTML=xmlhttp.responseText;
+		
+		
+		}
+	}
+	
+	xmlhttp.open("GET","../views/planting_process/data_history.php?land_id="+str,true);
+	xmlhttp.send();
+	
+	
+	}
+</script>
+
 <!-- Content Header (Page header) -->
         
                  <?php
@@ -40,18 +78,26 @@
                                         
                                             <div class="form-group">
                                            <label>Hamparan Tanah</label>
-                                            <select id="basic" name="i_land_id" class="selectpicker show-tick form-control" data-live-search="true" >
+           
                                      
-                                           <?php
+                                         
                                       
+                                        
+                                        <select id="basic" name="i_land_id" class="selectpicker show-tick form-control" data-live-search="true" onChange="load_data_participant(this.value)" >
+                                      <option value="0">---</option>
+                                     	<?php
                                         while($row_land = mysql_fetch_array($query_land)){
                                         ?>
                                          <option value="<?= $row_land['land_id']?>" <?php if( $row->land_id == $row_land['land_id']){ ?> selected="selected"<?php } ?>><?= $row_land['location_name']." (".get_land_area($row_land['land_id']).")" ?></option>
                                         <?php
                                         }
                                         ?>
+                                        
                                           
-                                        </select>
+                                        </select>  
+                                          
+                                          
+                                       
                                         </div>
                                         
                                            <div class="form-group">
@@ -155,3 +201,9 @@
                         </div><!--/.col (right) -->
                     </div>   <!-- /.row -->
                 </section><!-- /.content -->
+                
+                
+                
+                
+                
+                

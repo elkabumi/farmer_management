@@ -37,7 +37,12 @@
                                     
                                    
                                         
-                                        
+                                        <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Kode</label>
+                                            <input required readonly="readonly" type="text" name="i_code" class="form-control" placeholder="Masukan Kode Kontrak..." value="<?= $row->land_code ?>"/>
+                                        </div>
+                                        </div>
                                         <div class="col-md-6">
                                 			<div class="form-group"> 
                                                 <label>Lokasi</label>

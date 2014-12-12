@@ -44,7 +44,7 @@
                             <div class="title_page"> <?= $title ?></div>
                             
 
-                             <form action="<?= $action?>" method="post" enctype="multipart/form-data" role="form">
+                             <form  class="cmxform" id="createForm" action="<?= $action?>" method="post" enctype="multipart/form-data" role="form">
 
                             <div class="box box-cokelat">
                                 
@@ -65,11 +65,11 @@
                                         
                                         <div class="form-group">
                                           <label>Nama</label>
-                                                  <input required type="text" name="i_name" class="form-control" placeholder="Masukan Nama ..."  value="<?= $row->farmer_name ?>"/>                                   
+                                                  <input required type="text" name="i_name" class="form-control" placeholder="Masukan Nama ..."  value="<?= $row->farmer_name ?>" title="Nama Tidak boleh kosong"/>                                   
                                   		</div>
                                         <div class="form-group">
                                             <label>Nomor KTP</label>
-                                            <input required type="text" name="i_no_ktp" class="form-control" placeholder="Masukan Nomor KTP ..." value="<?= $row->farmer_identity_number ?>"/>
+                                            <input required type="text" name="i_no_ktp" class="form-control" placeholder="Masukan Nomor KTP ..." value="<?= $row->farmer_identity_number ?>" title="Nomor KTP Tidak boleh kosong"/>
                                         </div>
                                       
  								
