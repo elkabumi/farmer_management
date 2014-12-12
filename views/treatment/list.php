@@ -180,8 +180,8 @@ function edit_data_treatment(planting_process_id, id)
                                             <tr>
                                             <th width="5%">No</th>
                                             	<th>Tanggal Tanam</th>
-                                                <th>Kode Tanah</th>
                                                 <th>Tanah</th>
+                                                <th>Petani</th>
                                                 <th>Config</th>
                                                   
                                             </tr>
@@ -194,8 +194,8 @@ function edit_data_treatment(planting_process_id, id)
                                             <tr>
                                               <td><?= $no?></td>
                                               <td><?= format_date($row['planting_process_date'])?></td>
-                                              <td><?= $row['land_code']; ?></td>
-                                              <td><?= $row['location_name']." (".get_land_area($row['land_id'])." m3)"; ?></td>
+                                              <td><?= $row['land_code']." - ".$row['location_name']." (".get_land_area($row['land_id'])." m3)"; ?></td>
+                                              <td><?= $row['pemilik_tanah'] ?></td>
                                             
                                               <td style="text-align:center;">
 
