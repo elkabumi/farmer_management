@@ -16,9 +16,7 @@
                                             	<th>Tanggal</th>
                                                 <th>Tipe Treatment</th>
                                                 <th>Keterangan</th>
-                                               
                                                 <th>Config</th>
-                                                  
                                             </tr>
                                         </thead>
                                         <tbody>

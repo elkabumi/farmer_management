@@ -85,7 +85,7 @@
               if(isset($_GET['id'])){
 			  ?>
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-md-12">
                              <div class="title_page">Data Tanah Petani</div>
                             
                             <div class="box">
@@ -94,7 +94,7 @@
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                            <th width="5%">No</th>
+                                            	<th width="5%">No</th>
                                                 <th>Nama Petani</th>
                                                 <th>Luas Lahan (m3)</th>
                                               	<th>Config</th> 

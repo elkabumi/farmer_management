@@ -1,11 +1,4 @@
-<?php
-	include "../../lib/config.php";
-	include "../../lib/function.php";
-   $planting_process_id = $_GET['planting_process_id'];
-   $id = $_GET['id'];
-   $query_edit = mysql_query("select * from treatments where treatment_id = '$id'");
-   $row_edit = mysql_fetch_object($query_edit);
-   ?>
+
    <!-- Content Header (Page header) -->
 
        
@@ -15,7 +8,7 @@
                           
                           <div class="title_page">Form Edit Treatment</div>
 
-                             <form action="treatment.php?page=edit&planting_process_id=<?= $planting_process_id ?>&id=<?= $id?>" method="post" enctype="multipart/form-data" role="form">
+                             <form action="<?= $action ?>" method="post" enctype="multipart/form-data" role="form">
 
                             <div class="box box-cokelat">
                                 

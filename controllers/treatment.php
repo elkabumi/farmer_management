@@ -13,7 +13,9 @@ switch ($page) {
 	case 'list':
 		get_header($title);
 		
-		$query = select();
+		$search = (isset($_GET['search'])) ? $_GET['search'] : null;
+		
+		$query = select($search);
 		$add_button = "treatment.php?page=form";
 
 
@@ -22,20 +24,40 @@ switch ($page) {
 	break;
 	
 	case 'list_treatment':
-		get_header($title);
+		//get_header($title);
 		$title = ucfirst("Data Treatment");
 		
 		$planting_process_id = get_isset($_GET['planting_process_id']);	
-		
-		$row_tanam = read_tanam_id($planting_process_id);
 		
 		$query = select_treatment($planting_process_id);
 		$add_button = "treatment.php?page=form&planting_process_id=$planting_process_id";
 		$close_button = "treatment.php?page=list";
 		
-		include '../views/treatment/form_tanam.php';
 		include '../views/treatment/list_treatment.php';
-		get_footer();
+		//get_footer();
+	break;
+	
+	case 'form_add_treatment':
+		//get_header($title);
+		$planting_process_id = get_isset($_GET['planting_process_id']);	
+		
+		$action = "treatment.php?page=save&planting_process_id=$planting_process_id";
+		
+		include '../views/treatment/form_add.php';
+		//get_footer();
+	break;
+	
+	case 'form_edit_treatment':
+		//get_header($title);
+		$planting_process_id = get_isset($_GET['planting_process_id']);
+		$id = get_isset($_GET['id']);
+		
+		$row_edit = read_id($id);
+
+		$action = "treatment.php?page=edit&planting_process_id=$planting_process_id&id=$id";
+		
+		include '../views/treatment/form_edit.php';
+		//get_footer();
 	break;
 	
 	case 'list_treatment_new':
@@ -54,52 +76,11 @@ switch ($page) {
 		//get_footer();
 	break;
 	
-	// Form input dan edit
-	case 'form':
-	
-		get_header();
-		
-		
-		
-		$planting_process_id = (isset($_GET['planting_process_id'])) ? $_GET['planting_process_id'] : null;
-		
-		$close_button = "treatment.php?page=list_treatment&planting_process_id=$planting_process_id";
-		$query_treatment_type = select_treatment_type();
-
-		$id = (isset($_GET['id'])) ? $_GET['id'] : null;
-		if($id){
-			$title = ucfirst("Form Edit Treatment");
-			$row = read_id($id);
-		
-			$action = "treatment.php?page=edit&id=$id&planting_process_id=$planting_process_id";
-		} else{
-			$title = ucfirst("Form Input Treatment");
-			//inisialisasi
-			$row = new stdClass();
-	
-			$row->treatment_date = date("Y-m-d");
-			$row->treatment_type_id = false;
-			$row->treatment_description = false;
-
-			$action = "treatment.php?page=save&planting_process_id=$planting_process_id";
-		}
-
-		include '../views/treatment/form.php';
-		get_footer();
-	break;
-	
 	case 'search':
 
-		get_header($title);
-		
 		$i_search = get_isset($_POST['i_search']);
-		
-		$query = select_search($i_search);
-		$add_button = "treatment.php?page=form";
 
-
-		include '../views/treatment/list.php';
-		get_footer();
+		header("Location: treatment.php?page=list&search=$i_search");
 		
 	break;
 
@@ -161,7 +142,7 @@ switch ($page) {
 		$planting_process_id = (isset($_GET['planting_process_id'])) ? $_GET['planting_process_id'] : null;
 		delete($id);
 
-		header("Location: treatment.php?page=list_treatment&did=3&planting_process_id=$planting_process_id");
+		header("Location: treatment.php?page=list&did=3&planting_process_id=$planting_process_id");
 
 	break;
 }

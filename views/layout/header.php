@@ -73,15 +73,14 @@ if(!$_SESSION['login']){
         <script src="../js/popup/popModal.js"></script>
         <!-- bootstrap time picker -->
         <script src="../js/plugins/timepicker/bootstrap-timepicker.min.js" type="text/javascript"></script>
-         <!-- Datepicker -->
+        <!-- Datepicker -->
         <script src="../js/plugins/datepicker/bootstrap-datepicker.js"></script>
-		
-       
-		  <script type="text/javascript" src="../js/lookup/bootstrap-select.js"></script>
-      
-          <!-- AdminLTE App -->
+		<!-- select -->
+		<script type="text/javascript" src="../js/lookup/bootstrap-select.js"></script>
+        <!-- AdminLTE App -->
         <script src="../js/AdminLTE/app.js" type="text/javascript"></script>
-          <script src="../js/plugins/validate/jquery.validate.js" type="text/javascript"></script>
+        <!-- validasi -->
+        <script src="../js/plugins/validate/jquery.validate.js" type="text/javascript"></script>
 
 
     </head>

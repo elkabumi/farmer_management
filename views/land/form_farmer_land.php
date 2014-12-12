@@ -77,7 +77,7 @@
                                        
                                        	<div class="form-group"> 
                                                 <label>Luas Tanah (m3)</label>
-                                            <input required type="text" name="i_luas" class="form-control" placeholder="Masukkan poin ..." value="<?= $row->farmer_land_area ?>"title="Luas Tanah Tidak boleh kosong dan harus diisi dengan angka"/>       
+                                            <input required type="text" name="i_luas" class="form-control" placeholder="Masukkan poin ..." value="<?= $row->farmer_land_area ?>" title="Luas Tanah Tidak boleh kosong dan harus diisi dengan angka"/>       
                                        
                                        
                                     </div>

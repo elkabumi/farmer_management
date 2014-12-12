@@ -52,11 +52,11 @@
                                 <div class="box-body">
                                     
                       
-                                        <div class="col-md-12">
+                                       
                                         <div class="col-md-9">
                                         <div class="form-group">
                                             <label>Kode Kontrak</label>
-                                            <input required type="text" name="i_code" class="form-control" placeholder="Masukan Kode Kontrak..." value="<?= $row->farmer_contract_code ?>"/>
+                                            <input required type="text" name="i_code" class="form-control" placeholder="Masukan Kode Kontrak..." value="<?= $row->farmer_contract_code ?>" title="Kode kontrak tidak boleh kosong"/>
                                         </div>
                                         
                                     
@@ -94,7 +94,7 @@
 										?>
                                            <input type="file" name="i_img" id="i_img" />
                                         </div>
-                                       </div>
+                                    
                                       
                                         </div>
                                         <div style="clear:both;"></div>
@@ -115,7 +115,7 @@
               if(isset($_GET['id'])){
 			  ?>
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-md-12">
                              <div class="title_page">Data Tanah Petani</div>
                             
                             <div class="box">
@@ -124,11 +124,12 @@
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                            <th width="5%">No</th>
+                                           	 	<th width="5%">No</th>
                                              	<th>Luas Tanah</th>
                                                 <th>Code Hamparan</th>
                                                 <th>Lokasi</th>
                                               	<th>Luas Hamparan</th> 
+                                                <th>Config</th> 
                                             </tr>
                                         </thead>
                                         <tbody>

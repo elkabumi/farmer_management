@@ -1,117 +1,25 @@
 <script type="text/javascript">
+
 function load_data_treatment(id)
 {
-	if (id=="" || id == 0)
-	{
-	document.getElementById("table_treatment").innerHTML="";
-	return;
-	} 
-	if (window.XMLHttpRequest)
-	{// kode for IE7+, Firefox, Chrome, Opera, Safari
-	xmlhttp=new XMLHttpRequest();
-	}
-	else
-	{// kode for IE6, IE5
-	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	xmlhttp.onreadystatechange=function()
-	{
-	if (xmlhttp.readyState==4 && xmlhttp.status==200)
-		{
-		document.getElementById("table_treatment").innerHTML=xmlhttp.responseText;
-		}
-	}
+	$("#table_treatment").load('treatment.php?page=list_treatment&planting_process_id='+id); 
+}
 	
-	xmlhttp.open("GET","../views/treatment/list_treatment_new.php?planting_process_id="+id,true);
-	xmlhttp.send();
-	
-	
-	}
-	
-	function hidden_data_treatment(id)
+function hidden_data_treatment(id)
 {
-	
-	if (id=="" || id == 0)
-	{
-	document.getElementById("table_treatment").innerHTML="";
-	return;
-	} 
-	if (window.XMLHttpRequest)
-	{// kode for IE7+, Firefox, Chrome, Opera, Safari
-	xmlhttp=new XMLHttpRequest();
-	}
-	else
-	{// kode for IE6, IE5
-	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	xmlhttp.onreadystatechange=function()
-	{
-	if (xmlhttp.readyState==4 && xmlhttp.status==200)
-		{
-		document.getElementById("table_treatment").innerHTML=xmlhttp.responseText;
-		}
-	}
-	
-	xmlhttp.open("GET","../views/treatment/list_treatment_new.php?planting_process_id="+id,true);
-	xmlhttp.send();
-	
-	
-	}
+	$("#table_treatment").load('treatment.php?page=list_treatment&planting_process_id='+id); 
+}
 	
 function add_data_treatment(id)
 {
-	if (id=="" || id == 0)
-	{
-	document.getElementById("table_treatment").innerHTML="";
-	return;
-	} 
-	if (window.XMLHttpRequest)
-	{// kode for IE7+, Firefox, Chrome, Opera, Safari
-	xmlhttp=new XMLHttpRequest();
-	}
-	else
-	{// kode for IE6, IE5
-	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	xmlhttp.onreadystatechange=function()
-	{
-	if (xmlhttp.readyState==4 && xmlhttp.status==200)
-		{
-		document.getElementById("table_treatment").innerHTML=xmlhttp.responseText;
-		}
-	}
-	
-	xmlhttp.open("GET","../views/treatment/form_add.php?planting_process_id="+id,true);
-	xmlhttp.send();
-	
-	
-	}
+	 $("#table_treatment").load('treatment.php?page=form_add_treatment&planting_process_id='+id); 
+}
 	
 
 function edit_data_treatment(planting_process_id, id)
 {
-	
-	if (window.XMLHttpRequest)
-	{// kode for IE7+, Firefox, Chrome, Opera, Safari
-	xmlhttp=new XMLHttpRequest();
-	}
-	else
-	{// kode for IE6, IE5
-	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	xmlhttp.onreadystatechange=function()
-	{
-	if (xmlhttp.readyState==4 && xmlhttp.status==200)
-		{
-		document.getElementById("table_treatment").innerHTML=xmlhttp.responseText;
-		}
-	}
-	
-	xmlhttp.open("GET","../views/treatment/form_edit.php?planting_process_id="+planting_process_id+"&id="+id,true);
-	xmlhttp.send();
-	
-	
-	}
+	 $("#table_treatment").load('treatment.php?page=form_edit_treatment&planting_process_id='+planting_process_id+'&id='+id); 
+}
 
 	
 </script>
@@ -168,9 +76,8 @@ function edit_data_treatment(planting_process_id, id)
                             <div class="box">
                               <div class="box-header">
                               <div class="col-md-12">
-                              
                              <form action="treatment.php?page=search" method="post" enctype="multipart/form-data" role="form">
-                                 <input type="text" required class="form-control" name="i_search" value="" style="margin-bottom:10px; margin-top:10px;"/>
+                                 <input type="text" required class="form-control" name="i_search" value="<?= $search ?>" style="margin-bottom:10px; margin-top:10px;" placeholder="Cari disini ..."/>
                                  </form>
                                  </div>
                               </div>
@@ -220,74 +127,23 @@ function edit_data_treatment(planting_process_id, id)
                         </div>
                         
                         
-                          <div class="col-md-6" id="table_treatment">
-                         
+                          
+                         <div class="col-md-6" id="table_treatment">
+
                          <?php
                          $planting_process_id = (isset($_GET['planting_process_id'])) ?  $_GET['planting_process_id'] : null;
 						 if($planting_process_id){
 						 
-						 ?>
-                         
-                                  <div class="title_page"> <?= $planting_process_id ?></div>
-                            
-                            <div class="box">
-                             
-                                <div class="box-body2 table-responsive">
-                                     <table id="example3" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                            <th width="5%">No</th>
-                                            	<th>Tanggal</th>
-                                                <th>Tipe Treatment</th>
-                                                <th>Keterangan</th>
-                                               
-                                                <th>Config</th>
-                                                  
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                           
-
-                                               <?php
-                                           $no_treatment = 1;
-										   $query_treatment = mysql_query("select a.*, b.treatment_type_name from treatments a 
-										   								join treatment_types b on b.treatment_type_id = a.treatment_type_id
-										   	where planting_process_id = '$planting_process_id' order by treatment_id");
-                                            while($row_treatment = mysql_fetch_array($query_treatment)){
-                                            ?>
-                                            <tr>
-                                              <td><?= $no_treatment?></td>
-                                              <td><?= format_date($row_treatment['treatment_date'])?></td>
-                                              <td><?= $row_treatment['treatment_type_name']?></td>
-                                              <td><?= $row_treatment['treatment_description']?></td>
-                                              <td style="text-align:center;">
-
-                                                    <a href="#" onClick="edit_data_treatment(<?= $planting_process_id.",". $row_treatment['treatment_id'] ?>)"  class="btn btn-default" ><i class="fa fa-pencil"></i></a>
-                                                    <a href="javascript:void(0)" onclick="confirm_delete(<?= $row_treatment['treatment_id']; ?>,'treatment.php?page=delete&planting_process_id=<?= $row_treatment['planting_process_id']?>&id=')" class="btn btn-default" ><i class="fa fa-trash-o"></i></a>
-
-                                                </td>
-                                            </tr>
-                                            <?php
-											$no_treatment++;
-                                            }
-                                            ?>
-                                          
-                                        </tbody>
-                                          <tfoot>
-                                            <tr>
-                                                <td colspan="10"><a href="#" class="btn btn-success " onClick="add_data_treatment(<?= $planting_process_id?>)" >Add</a></td>
-                                               
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-                            <?php
+						include 'list_treatment.php';
 						 }
-							?>
-                         
+						 
+						 ?>
                         </div>
+
+						
+                     
+                        
+                       
                         
                         
                     </div>
