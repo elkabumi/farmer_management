@@ -1,5 +1,5 @@
 <?php
-function get_hamparan_code(){
+function get_land_code(){
 	$query = mysql_query("select land_code from counters");
 	$result = mysql_fetch_array($query);
 	$code = ($result['land_code']) ? $result['land_code'] + 1 : 1;
@@ -16,7 +16,7 @@ function get_hamparan_code(){
 	
 	return "HT".$code;
 }
-function edit_hamparan_code(){
+function edit_land_code(){
 	mysql_query("update counters set land_code = land_code + 1");
 }
 function get_land_area($land_id){

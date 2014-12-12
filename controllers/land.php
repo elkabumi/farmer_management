@@ -96,7 +96,7 @@ switch ($page) {
 		$i_area = get_isset($i_area);
 		
 		$data = "'',
-				'$i_code'.
+				'$i_code',
 				'$i_area',
 				'$i_location_id'
 			

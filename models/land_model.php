@@ -34,7 +34,7 @@ FROM `farmer_lands` WHERE farmer_land_id = '$id'");
 }
 
 function create($table,$data){
-	mysql_query("insert into $table values(".$data.")");
+	mysql_query("insert into ".$table." values(".$data.")");
 	
 }
 
