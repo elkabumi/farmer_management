@@ -104,6 +104,7 @@ switch ($page) {
 
 		create("lands", $data);
 		$new_id = mysql_insert_id();
+		update_counter();
 		header("Location: land.php?page=form&did=1&id=$new_id");
 		
 	break;

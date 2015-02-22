@@ -1,4 +1,7 @@
 <?php
+
+
+
 function get_land_code(){
 	$query = mysql_query("select land_code from counters");
 	$result = mysql_fetch_array($query);

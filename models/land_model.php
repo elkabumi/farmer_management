@@ -63,4 +63,9 @@ function select_farmer($id,$i_farmer_id){
 			");
 	return $query;
 }
+
+function update_counter(){
+	mysql_query("update counters set land_code = land_code + 1");
+}
+
 ?>
