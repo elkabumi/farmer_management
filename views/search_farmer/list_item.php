@@ -13,8 +13,8 @@
                                             <tr>
                                             	<th width="5%">No</th>
                                                 <th>Tanggal</th>
-                                                <th>Luas Tanah</th>
-												<th>Hamparan Tanah</th>
+                                                <th>Luas Tanah (m2)</th>
+												<th>Hamparan Tanah (m2)</th>
 												<th>Lokasi Lahan</th>
 												<th>Jenis Varietas</th>
                                             </tr>

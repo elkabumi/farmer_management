@@ -16,11 +16,11 @@
                                             <tr>
                                             	<th width="5%">No</th>
                                                 <th>Tanggal Panen</th>
-                                                <th>Luas Tanah (m3)</th>
+                                                <th>Luas Tanah (m2)</th>
 												<th>Lokasi</th>
 												<th>Estimasi</th>
 												<th>Bobot Tebu</th>
-                                                <th>Bablur</th>
+                                                <th>Hablur</th>
 												<th>Sample</th>
                                                 <th width="10%">Detail</th>
                                             </tr>

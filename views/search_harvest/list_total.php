@@ -10,10 +10,10 @@
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                            <th>Total Luas Tanah (m3)</th>
+                                            <th>Total Luas Tanah (m2)</th>
                                            <th>Total Estimasi</th>
                                                 <th>Total Bobot Tebu</th>
-                                                 <th>Total Bablur</th>
+                                                 <th>Total Hablur</th>
 												 
                                             </tr>
                                         </thead>

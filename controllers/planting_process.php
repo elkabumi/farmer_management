@@ -56,6 +56,9 @@ switch ($page) {
 			$row->planting_process_seedling_stage = false;
 			$row->seed_id = false;
 			$row->planting_process_milled_date = '';
+			$row->planting_process_stem_number = '';
+			$row->planting_process_stem_height = '';
+			$row->planting_process_p2o5_content = '';
 
 			$action = "planting_process.php?page=save";
 		}
@@ -77,6 +80,9 @@ switch ($page) {
 		$i_seedling_stage = get_isset($i_seedling_stage);
 		$i_seed_id = get_isset($i_seed_id);
 		$i_milled_date = format_back_date(get_isset($i_milled_date));
+		$i_stem_number = get_isset($i_stem_number);
+		$i_stem_height = get_isset($i_stem_height);
+		$i_p2o5_content = get_isset($i_p2o5_content);
 		
 		$harvest_date = date ("Y-m-d", strtotime("+1 year", strtotime($i_date)));
 		
@@ -93,7 +99,10 @@ switch ($page) {
 				'',
 				'',
 				'',
-				'$i_milled_date'
+				'$i_milled_date',
+				'$i_stem_number',
+				'$i_stem_height',
+				'$i_p2o5_content'
 				";
 		
 		create($data);
@@ -117,6 +126,9 @@ switch ($page) {
 		$i_seedling_stage = get_isset($i_seedling_stage);
 		$i_seed_id = get_isset($i_seed_id);
 		$i_milled_date = format_back_date(get_isset($i_milled_date));
+		$i_stem_number = get_isset($i_stem_number);
+		$i_stem_height = get_isset($i_stem_height);
+		$i_p2o5_content = get_isset($i_p2o5_content);
 
 		
 					$data = " land_id = '$i_land_id', 
@@ -126,7 +138,10 @@ switch ($page) {
 					planting_process_planting_distance = '$i_planting_distance',
 					planting_process_seedling_stage = '$i_seedling_stage',
 					seed_id = '$i_seed_id',
-					planting_process_milled_date = '$i_milled_date'
+					planting_process_milled_date = '$i_milled_date',
+					planting_process_stem_number = '$i_stem_number',
+					planting_process_stem_height = '$i_stem_height',
+					planting_process_p2o5_content = '$i_p2o5_content'
 
 			";
 			

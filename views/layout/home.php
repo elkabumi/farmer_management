@@ -53,7 +53,9 @@
                              
                                 <div class="box-body2 table-responsive" style="padding:20px; text-align:center;">
                                    <h2>Selamat Datang</h2>
-                                  <h4> Di Sistem Management Petani</h4>
+                                  <h4> Di aplikasi revolusi manajemen perencanaan tanam 
+dan tebang angkut budi daya tebu 
+berbasis IT </h4><br>
 
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->

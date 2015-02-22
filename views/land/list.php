@@ -56,7 +56,7 @@
                                             <tr>
                                             	<th width="5%">No</th>
                                             	<th>Code</th>
-                                                <th>Luas Tanah (m3)</th>
+                                                <th>Luas Tanah (m2)</th>
                                                 <th>Lokasi Tanah</th>
                                                 <th>Config</th>
                                             </tr>

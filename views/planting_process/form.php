@@ -136,6 +136,17 @@ function load_data_participant(str)
                                           
                                         </select>
                                         </div>
+                                        
+                                        <div class="form-group">
+                                            <label>Jumlah batang /length (per10 m2)</label>
+                                            <input required type="text" name="i_stem_number" class="form-control" placeholder="Masukkan jumlah batang /length ..." value="<?= $row->planting_process_stem_number ?>"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>Tinggi batang /lenght </label>
+                                            <input required type="text" name="i_stem_height" class="form-control" placeholder="Masukkan tinggi batang /lenght ..." value="<?= $row->planting_process_stem_height ?>"/>
+                                        </div>
+                                        
                                         </div>
                                         <div class="col-md-6">
                                         <div class="form-group">
@@ -176,6 +187,10 @@ function load_data_participant(str)
                                         </div><!-- /.input group -->
                                     </div><!-- /.form group -->
                                         
+                                          <div class="form-group">
+                                            <label>Kandungan P2o5 dalam kadar nira batang tebu </label>
+                                            <input required type="text" name="i_p2o5_content" class="form-control" placeholder="Masukkan kandungan P2o5 ..." value="<?= $row->planting_process_p2o5_content ?>"/>
+                                        </div>
                                        
                                         </div>
                                         <div style="clear:both;"></div>

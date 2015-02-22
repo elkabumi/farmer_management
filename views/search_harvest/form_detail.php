@@ -93,7 +93,7 @@
                                     </div><!-- /.form group -->
                                         
                                         <div class="form-group">
-                                        <label>Bablur</label>
+                                        <label>Hablur</label>
                                        <input required type="text" name="i_land_name" class="form-control"  value="" readonly="readonly"/>
                                     </div><!-- /.form group -->
                                         
