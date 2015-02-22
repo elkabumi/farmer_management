@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 04 Des 2014 pada 11.43
+-- Generation Time: 22 Feb 2015 pada 23.44
 -- Versi Server: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -19,6 +19,23 @@ SET time_zone = "+00:00";
 --
 -- Database: `farmer_management`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `counters`
+--
+
+CREATE TABLE IF NOT EXISTS `counters` (
+  `land_code` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `counters`
+--
+
+INSERT INTO `counters` (`land_code`) VALUES
+(4);
 
 -- --------------------------------------------------------
 
@@ -54,16 +71,18 @@ CREATE TABLE IF NOT EXISTS `farmer_lands` (
 `farmer_land_id` int(11) NOT NULL,
   `land_id` int(11) NOT NULL,
   `farmer_id` int(11) NOT NULL,
-  `farmer_land_area` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `farmer_land_area` decimal(10,2) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `farmer_lands`
 --
 
 INSERT INTO `farmer_lands` (`farmer_land_id`, `land_id`, `farmer_id`, `farmer_land_area`) VALUES
-(1, 1, 1, 30),
-(2, 1, 2, 20);
+(1, 1, 1, '30.00'),
+(2, 1, 2, '20.00'),
+(4, 3, 1, '10.00'),
+(5, 4, 1, '60.00');
 
 -- --------------------------------------------------------
 
@@ -73,17 +92,20 @@ INSERT INTO `farmer_lands` (`farmer_land_id`, `land_id`, `farmer_id`, `farmer_la
 
 CREATE TABLE IF NOT EXISTS `lands` (
 `land_id` int(11) NOT NULL,
-  `land_area` int(11) NOT NULL,
+  `land_code` varchar(100) NOT NULL,
+  `land_area` decimal(10,2) NOT NULL,
   `location_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `lands`
 --
 
-INSERT INTO `lands` (`land_id`, `land_area`, `location_id`) VALUES
-(1, 50, 2),
-(2, 0, 2);
+INSERT INTO `lands` (`land_id`, `land_code`, `land_area`, `location_id`) VALUES
+(1, 'HT00001', '50.00', 2),
+(3, 'HT00002', '30.00', 3),
+(4, 'HT00003', '0.00', 3),
+(6, 'HT00004', '0.00', 3);
 
 -- --------------------------------------------------------
 
@@ -95,14 +117,15 @@ CREATE TABLE IF NOT EXISTS `locations` (
 `location_id` int(11) NOT NULL,
   `location_name` varchar(100) NOT NULL,
   `location_description` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `locations`
 --
 
 INSERT INTO `locations` (`location_id`, `location_name`, `location_description`) VALUES
-(2, 'Kecamatan Waru', '');
+(2, 'Kecamatan Waru', ''),
+(3, 'Kecamatan Gayungsari', '');
 
 -- --------------------------------------------------------
 
@@ -136,21 +159,28 @@ CREATE TABLE IF NOT EXISTS `planting_processes` (
   `varieties_id` int(11) NOT NULL,
   `planting_process_date` date NOT NULL,
   `planting_distance_model_id` int(11) NOT NULL,
-  `planting_process_planting_distance` int(11) NOT NULL,
-  `planting_process_seedling_stage` int(11) NOT NULL,
+  `planting_process_planting_distance` decimal(10,2) NOT NULL,
+  `planting_process_seedling_stage` decimal(10,2) NOT NULL,
   `seed_id` int(11) NOT NULL,
   `planting_process_harvest_date` date NOT NULL,
-  `planting_process_rod_per_unit_area` int(11) NOT NULL,
-  `planting_process_rod_height` int(11) NOT NULL,
-  `planting_process_brix` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `planting_process_rod_per_unit_area` decimal(10,2) NOT NULL,
+  `planting_process_rod_height` decimal(10,2) NOT NULL,
+  `planting_process_brix` int(11) NOT NULL,
+  `planting_process_milled_date` date NOT NULL,
+  `planting_process_stem_number` varchar(100) NOT NULL,
+  `planting_process_stem_height` varchar(100) NOT NULL,
+  `planting_process_p2o5_content` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `planting_processes`
 --
 
-INSERT INTO `planting_processes` (`planting_process_id`, `land_id`, `varieties_id`, `planting_process_date`, `planting_distance_model_id`, `planting_process_planting_distance`, `planting_process_seedling_stage`, `seed_id`, `planting_process_harvest_date`, `planting_process_rod_per_unit_area`, `planting_process_rod_height`, `planting_process_brix`) VALUES
-(2, 1, 2, '2014-12-08', 2, 4, 5, 3, '0000-00-00', 0, 0, 0);
+INSERT INTO `planting_processes` (`planting_process_id`, `land_id`, `varieties_id`, `planting_process_date`, `planting_distance_model_id`, `planting_process_planting_distance`, `planting_process_seedling_stage`, `seed_id`, `planting_process_harvest_date`, `planting_process_rod_per_unit_area`, `planting_process_rod_height`, `planting_process_brix`, `planting_process_milled_date`, `planting_process_stem_number`, `planting_process_stem_height`, `planting_process_p2o5_content`) VALUES
+(3, 1, 1, '2014-12-08', 1, '2.00', '3.00', 1, '2015-12-08', '0.00', '0.00', 0, '2014-12-10', '', '', ''),
+(4, 3, 2, '2014-12-09', 1, '5.00', '5.00', 2, '2015-12-09', '0.00', '0.00', 0, '2014-12-10', '', '', ''),
+(5, 1, 1, '2015-02-22', 1, '100.00', '200.00', 1, '2016-02-22', '0.00', '0.00', 0, '2015-02-22', '10', '11', '12'),
+(6, 3, 1, '2015-02-22', 1, '200.00', '100.00', 1, '2016-02-22', '0.00', '0.00', 0, '2015-02-15', '10', '11', '12');
 
 -- --------------------------------------------------------
 
@@ -162,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `seeds` (
 `seed_id` int(11) NOT NULL,
   `seed_name` varchar(100) NOT NULL,
   `seed_description` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `seeds`
@@ -171,7 +201,9 @@ CREATE TABLE IF NOT EXISTS `seeds` (
 INSERT INTO `seeds` (`seed_id`, `seed_name`, `seed_description`) VALUES
 (1, 'BAGAL', ''),
 (2, 'BUD CHIP', ''),
-(3, 'KEPRAS', '');
+(3, 'KEPRAS', ''),
+(4, 'test', ''),
+(5, 'test', '');
 
 -- --------------------------------------------------------
 
@@ -185,14 +217,15 @@ CREATE TABLE IF NOT EXISTS `treatments` (
   `treatment_date` date NOT NULL,
   `treatment_type_id` int(11) NOT NULL,
   `treatment_description` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `treatments`
 --
 
 INSERT INTO `treatments` (`treatment_id`, `planting_process_id`, `treatment_date`, `treatment_type_id`, `treatment_description`) VALUES
-(1, 2, '2014-12-05', 3, 'ok2');
+(2, 3, '2014-12-09', 2, ''),
+(5, 3, '2014-12-10', 4, '');
 
 -- --------------------------------------------------------
 
@@ -344,17 +377,17 @@ MODIFY `farmer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `farmer_lands`
 --
 ALTER TABLE `farmer_lands`
-MODIFY `farmer_land_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `farmer_land_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `lands`
 --
 ALTER TABLE `lands`
-MODIFY `land_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `land_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
-MODIFY `location_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `location_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `planting_distance_models`
 --
@@ -364,17 +397,17 @@ MODIFY `planting_distance_model_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREME
 -- AUTO_INCREMENT for table `planting_processes`
 --
 ALTER TABLE `planting_processes`
-MODIFY `planting_process_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `planting_process_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `seeds`
 --
 ALTER TABLE `seeds`
-MODIFY `seed_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `seed_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `treatments`
 --
 ALTER TABLE `treatments`
-MODIFY `treatment_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `treatment_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `treatment_types`
 --
