@@ -26,14 +26,14 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input type="text" required class="form-control pull-right" id="date_picker1" name="i_date" value="<?= format_date($row_edit->treatment_date)?>"/>
+                                            <input type="text" required class="form-control pull-right" id="date_picker_new" name="i_date" value="<?= format_date($row_edit->treatment_date)?>"/>
                                            
                                         </div><!-- /.input group -->
                                     </div><!-- /.form group -->
                                         
                                           <div class="form-group">
                                            <label>Tipe Treatment</label>
-                                            <select id="basic" name="i_treatment_type_id" class="selectpicker show-tick form-control" data-live-search="true" >
+                                            <select id="basic" name="i_treatment_type_id" class="selectpicker_new show-tick form-control" data-live-search="true" >
                                     
                                            <?php
                                         $query_treatment_type = mysql_query("select * from treatment_types order by treatment_type_id");
@@ -66,4 +66,13 @@
                             </div><!-- /.box -->
                        </form>
                   
-   
+   <script type="text/javascript">
+        $(function() {
+        
+       		 	$('#date_picker_new').datepicker({
+					format: 'dd/mm/yyyy'
+				});
+				
+				
+		});
+</script>
